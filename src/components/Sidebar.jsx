@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { menuData } from '../data/menuData'
+import { useResponsive } from '../hooks/useResponsive'
 
 const HEADING_FONT = "'Cormorant', serif"
 
@@ -20,7 +21,7 @@ const ChevronIcon = () => (
     </svg>
 )
 
-function SubMenuItem({ item, parentSlug, onNavigate }) {
+function SubMenuItem({ item, parentSlug, onNavigate, isMobile }) {
     const [hovered, setHovered] = useState(false)
     const path = `/${parentSlug}/${item.slug}`
 
@@ -34,10 +35,10 @@ function SubMenuItem({ item, parentSlug, onNavigate }) {
             style={{
                 display: 'block',
                 fontFamily: HEADING_FONT,
-                fontSize: '28px',
+                fontSize: isMobile ? '22px' : '28px',
                 fontWeight: 300,
                 color: hovered ? '#3d3a35' : '#727069',
-                padding: '14px 0',
+                padding: isMobile ? '10px 0' : '14px 0',
                 textDecoration: 'none',
                 lineHeight: 1.2,
                 transition: 'color 0.15s ease',
@@ -50,7 +51,7 @@ function SubMenuItem({ item, parentSlug, onNavigate }) {
     )
 }
 
-function MainNavItem({ item, isActive, onClick, onNavigate }) {
+function MainNavItem({ item, isActive, onClick, onNavigate, isMobile }) {
     const [hovered, setHovered] = useState(false)
     const hasChildren = item.children?.length > 0
 
@@ -72,10 +73,10 @@ function MainNavItem({ item, isActive, onClick, onNavigate }) {
                 justifyContent: 'space-between',
                 gap: '8px',
                 fontFamily: HEADING_FONT,
-                fontSize: '28px',
+                fontSize: isMobile ? '22px' : '28px',
                 fontWeight: 300,
                 color: isActive ? '#3d3a35' : hovered ? '#3d3a35' : '#727069',
-                padding: '18px 36px',
+                padding: isMobile ? '14px 20px' : '18px 36px',
                 background: 'none',
                 border: 'none',
                 textAlign: 'left',
@@ -94,7 +95,7 @@ function MainNavItem({ item, isActive, onClick, onNavigate }) {
     )
 }
 
-function SocialIcons() {
+function SocialIcons({ isMobile }) {
     const iconStyle = {
         width: '40px',
         height: '40px',
@@ -111,7 +112,7 @@ function SocialIcons() {
     }
 
     return (
-        <div style={{ display: 'flex', gap: '10px', padding: '24px 36px' }}>
+        <div style={{ display: 'flex', gap: '10px', padding: isMobile ? '24px 20px' : '24px 36px', flexWrap: 'wrap' }}>
             <a href="#" style={iconStyle}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -150,6 +151,7 @@ function SocialIcons() {
 export default function Sidebar({ open, onClose }) {
     const [activeIndex, setActiveIndex] = useState(null)
     const navigate = useNavigate()
+    const { isMobile } = useResponsive()
 
     const activeItem = activeIndex !== null ? menuData[activeIndex] : null
     const hasSubmenu = activeItem?.children?.length > 0
@@ -159,6 +161,10 @@ export default function Sidebar({ open, onClose }) {
         setActiveIndex(null)
         onClose()
     }
+
+    // On mobile, show submenu inline instead of side panel
+    const leftPanelWidth = isMobile ? '100%' : '380px'
+    const sidebarWidth = isMobile ? '100%' : (hasSubmenu ? '680px' : '380px')
 
     return (
         <>
@@ -177,37 +183,39 @@ export default function Sidebar({ open, onClose }) {
                 }}
             />
 
-            {/* Sidebar — two panel layout */}
+            {/* Sidebar */}
             <aside
                 style={{
                     position: 'fixed',
                     top: 0,
                     left: 0,
                     height: '100%',
-                    width: hasSubmenu ? '680px' : '380px',
-                    maxWidth: '90vw',
+                    width: sidebarWidth,
+                    maxWidth: isMobile ? '100vw' : '90vw',
                     zIndex: 50,
                     display: 'flex',
-                    flexDirection: 'row',
+                    flexDirection: isMobile ? 'column' : 'row',
                     transform: open ? 'translateX(0)' : 'translateX(-100%)',
                     transition: 'transform 0.45s cubic-bezier(0.77,0,0.18,1), width 0.35s cubic-bezier(0.77,0,0.18,1)',
                     boxShadow: open ? '6px 0 40px rgba(0,0,0,0.22)' : 'none',
+                    overflowY: isMobile ? 'auto' : 'hidden',
                 }}
             >
                 {/* LEFT PANEL — main nav */}
                 <div
                     style={{
-                        width: '380px',
-                        minWidth: '380px',
-                        height: '100%',
+                        width: leftPanelWidth,
+                        minWidth: isMobile ? 'auto' : '380px',
+                        height: isMobile ? 'auto' : '100%',
                         background: '#f5f2ed',
                         display: 'flex',
                         flexDirection: 'column',
                         position: 'relative',
+                        flexShrink: 0,
                     }}
                 >
-                    {/* Close button — only when no submenu is open */}
-                    {!hasSubmenu && (
+                    {/* Close button */}
+                    {(!hasSubmenu || isMobile) && (
                         <button
                             className="sidebar-close"
                             onClick={() => { onClose(); setActiveIndex(null) }}
@@ -221,61 +229,74 @@ export default function Sidebar({ open, onClose }) {
                         />
                     )}
 
-                    {/* Top spacer — no border line */}
-                    <div style={{ height: '90px', flexShrink: 0 }} />
+                    <div style={{ height: isMobile ? '70px' : '90px', flexShrink: 0 }} />
 
-                    {/* Navigation items */}
-                    <nav style={{ flex: 1, overflowY: 'auto' }}>
+                    <nav style={{ flex: isMobile ? 'none' : 1, overflowY: isMobile ? 'visible' : 'auto' }}>
                         {menuData.map((section, i) => (
-                            <MainNavItem
-                                key={i}
-                                item={section}
-                                isActive={activeIndex === i}
-                                onClick={() => setActiveIndex(activeIndex === i ? null : i)}
-                                onNavigate={handleNavigate}
-                            />
+                            <div key={i}>
+                                <MainNavItem
+                                    item={section}
+                                    isActive={activeIndex === i}
+                                    onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+                                    onNavigate={handleNavigate}
+                                    isMobile={isMobile}
+                                />
+                                {/* Mobile: show submenu inline */}
+                                {isMobile && activeIndex === i && section.children?.length > 0 && (
+                                    <div style={{ paddingLeft: 32, paddingBottom: 8 }}>
+                                        {section.children.map((child, j) => (
+                                            <SubMenuItem
+                                                key={j}
+                                                item={child}
+                                                parentSlug={section.slug}
+                                                onNavigate={handleNavigate}
+                                                isMobile={isMobile}
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </nav>
 
-                    {/* Social icons at bottom */}
-                    <SocialIcons />
+                    <SocialIcons isMobile={isMobile} />
                 </div>
 
-                {/* RIGHT PANEL — submenu */}
-                <div
-                    style={{
-                        width: '300px',
-                        height: '100%',
-                        background: '#f5f2ed',
-                        borderLeft: '1px solid #e8e5e0',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        opacity: hasSubmenu ? 1 : 0,
-                        transition: 'opacity 0.25s ease',
-                        overflow: 'hidden',
-                    }}
-                >
-                    {/* Top spacer with close button */}
-                    <div style={{ height: '68px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '24px' }}>
-                        <button
-                            className="sidebar-close"
-                            onClick={() => setActiveIndex(null)}
-                            aria-label="Close submenu"
-                        />
-                    </div>
-
-                    {/* Submenu items */}
-                    <div style={{ flex: 1, overflowY: 'auto', padding: '20px 36px' }}>
-                        {activeItem?.children?.map((child, i) => (
-                            <SubMenuItem
-                                key={i}
-                                item={child}
-                                parentSlug={activeItem.slug}
-                                onNavigate={handleNavigate}
+                {/* RIGHT PANEL — submenu (desktop/tablet only) */}
+                {!isMobile && (
+                    <div
+                        style={{
+                            width: '300px',
+                            height: '100%',
+                            background: '#f5f2ed',
+                            borderLeft: '1px solid #e8e5e0',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            opacity: hasSubmenu ? 1 : 0,
+                            transition: 'opacity 0.25s ease',
+                            overflow: 'hidden',
+                        }}
+                    >
+                        <div style={{ height: '68px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '24px' }}>
+                            <button
+                                className="sidebar-close"
+                                onClick={() => setActiveIndex(null)}
+                                aria-label="Close submenu"
                             />
-                        ))}
+                        </div>
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '20px 36px' }}>
+                            {activeItem?.children?.map((child, i) => (
+                                <SubMenuItem
+                                    key={i}
+                                    item={child}
+                                    parentSlug={activeItem.slug}
+                                    onNavigate={handleNavigate}
+                                    isMobile={isMobile}
+                                />
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </aside>
         </>
     )
