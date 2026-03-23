@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+    --font-heading: 'Cormorant', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* Sidebar close button — pseudo-element cross */
+.sidebar-close {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sidebar-close::before,
+.sidebar-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 0;
+    border-top: 1.5px solid #9c9690;
+    transition: border-color 0.15s ease;
+}
+
+.sidebar-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.sidebar-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.sidebar-close:hover::before,
+.sidebar-close:hover::after {
+    border-color: #3d3a35;
+}
