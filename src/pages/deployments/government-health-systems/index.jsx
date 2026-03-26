@@ -2,9 +2,8 @@ import PageLayout from '../../../components/PageLayout'
 import { useResponsive } from '../../../hooks/useResponsive'
 import govtImg from '../../../assets/Govthealthsystem.png'
 import govtHospitalImg from '../../../assets/Govthospital.png'
-import Bedicon from './public-health-facilities/Assets/bedicon'
-import Resourceicon from './public-health-facilities/Assets/Resourceicon'
-import clinicalicon from './public-health-facilities/clinicalicon'
+import Bedicon from './icons/Bedicon'
+import Resourceicon from './icons/Resourceicon'
 
 const ClinicalRegisterIcon = () => (
     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
