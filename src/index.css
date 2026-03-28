@@ -68,3 +68,176 @@ textarea {
         padding-right: 16px;
     }
 }
+
+/* ===== Animation System ===== */
+
+/* --- Keyframes --- */
+@keyframes shimmerSweep {
+    0%   { left: -100%; }
+    100% { left: 150%; }
+}
+
+@keyframes accentLineGrow {
+    from { transform: scaleX(0); opacity: 0; }
+    to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* --- Hover: lift + shadow --- */
+.hover-lift {
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -8px rgba(0, 23, 54, 0.18);
+}
+
+/* --- Hover: glass shimmer sweep --- */
+.glass-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.glass-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.18) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+    transition: none;
+}
+.glass-shimmer:hover::after {
+    animation: shimmerSweep 0.55s ease forwards;
+}
+
+/* --- Accent line grow (dividers / left borders) --- */
+.accent-line-grow {
+    transform-origin: left center;
+    animation: accentLineGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ===== Hospital Infrastructure Animations ===== */
+
+/* Screen power-on: dark overlay flickers then disappears, revealing the screen */
+@keyframes screenOn {
+    0%   { opacity: 0.12; }
+    4%   { opacity: 0.18; }
+    8%   { opacity: 0.06; }
+    14%  { opacity: 0.14; }
+    18%  { opacity: 0.04; }
+    26%  { opacity: 0.10; }
+    35%  { opacity: 0.03; }
+    50%  { opacity: 0.06; }
+    70%  { opacity: 0.02; }
+    100% { opacity: 0; }
+}
+.screen-on {
+    animation: screenOn 1.4s 0.3s ease forwards;
+}
+
+/* Scanline sweep: thin bright line sweeps top to bottom once */
+@keyframes scanlineSweep {
+    0%   { opacity: 0; top: 16%; }
+    5%   { opacity: 1; }
+    90%  { opacity: 0.6; }
+    100% { opacity: 0; top: 70%; }
+}
+.screen-scanline {
+    animation: scanlineSweep 0.8s 0.5s ease-in-out forwards;
+}
+
+@keyframes scanlineReveal {
+    0%   { clip-path: inset(0 0 100% 0); }
+    100% { clip-path: inset(0 0 0% 0); }
+}
+@keyframes signalPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,105,112,0.5); transform: scale(1); }
+    60%       { box-shadow: 0 0 0 10px rgba(0,105,112,0); transform: scale(1.2); }
+}
+@keyframes deviceBoot {
+    0%   { opacity: 0; letter-spacing: 0.6em; filter: blur(6px); }
+    50%  { opacity: 1; filter: blur(0); }
+    100% { opacity: 1; letter-spacing: 2px; }
+}
+@keyframes screenFlicker {
+    0%   { opacity: 0; }
+    8%   { opacity: 0.9; }
+    14%  { opacity: 0.1; }
+    20%  { opacity: 1; }
+    26%  { opacity: 0.5; }
+    30%  { opacity: 1; }
+    100% { opacity: 1; }
+}
+@keyframes panelSnap {
+    0%   { opacity: 0; transform: translateY(28px) scale(0.97); }
+    65%  { transform: translateY(-5px) scale(1.006); }
+    82%  { transform: translateY(2px) scale(0.999); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes stackAlign {
+    0%   { opacity: 0; transform: translateX(-20px) skewX(4deg); }
+    70%  { transform: translateX(3px) skewX(-0.5deg); }
+    100% { opacity: 1; transform: translateX(0) skewX(0); }
+}
+@keyframes signalRise {
+    0%   { opacity: 0; transform: translateY(36px); }
+    65%  { transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes edgePulse {
+    0%, 100% { border-left-color: #006970; box-shadow: none; }
+    50%       { border-left-color: #96F1FA; box-shadow: -6px 0 16px rgba(0,105,112,0.25); }
+}
+@keyframes underlineExpand {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+@keyframes orbitalLoop {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+@keyframes waveTrace {
+    0%   { width: 0%; }
+    75%  { width: 55%; }
+    88%  { width: 47%; }
+    100% { width: 50%; }
+}
+@keyframes metricFill {
+    0%   { width: 0%; }
+    75%  { width: 84%; }
+    88%  { width: 74%; }
+    100% { width: 78%; }
+}
+@keyframes focusIn {
+    from { opacity: 0; filter: blur(14px) brightness(1.3); }
+    to   { opacity: 0.9; filter: blur(0px) brightness(1); }
+}
+
+/* --- Classes --- */
+.scanline-reveal  { animation: scanlineReveal 0.9s cubic-bezier(0.22,1,0.36,1) forwards; }
+.signal-pulse     { animation: signalPulse 2.2s ease-in-out infinite; }
+.device-boot      { animation: deviceBoot 0.85s ease forwards; }
+.screen-flicker   { animation: screenFlicker 0.7s ease forwards; }
+.panel-snap       { animation: panelSnap 0.65s cubic-bezier(0.34,1.4,0.64,1) forwards; opacity: 0; }
+.stack-align      { animation: stackAlign 0.65s cubic-bezier(0.22,1,0.36,1) forwards; opacity: 0; }
+.signal-rise      { animation: signalRise 0.7s cubic-bezier(0.34,1.3,0.64,1) forwards; opacity: 0; }
+.edge-pulse       { animation: edgePulse 2.8s ease-in-out infinite; }
+.underline-expand { transform-origin: left center; animation: underlineExpand 0.7s 0.3s cubic-bezier(0.22,1,0.36,1) both; }
+.orbital-loop     { animation: orbitalLoop 8s linear infinite; }
+.metric-fill-bar  { width: 0 !important; animation: metricFill 1.4s 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+.wave-trace-bar   { width: 0 !important; animation: waveTrace 1.4s 0.4s cubic-bezier(0.22,1,0.36,1) forwards; }
+.focus-in         { animation: focusIn 1.1s 0.2s ease forwards; opacity: 0; }
+
+/* module-stagger: container hides children; .visible triggers staggered panelSnap */
+.module-stagger > * { opacity: 0; }
+.module-stagger.visible > *:nth-child(1) { animation: panelSnap 0.6s 0.05s cubic-bezier(0.34,1.3,0.64,1) forwards; }
+.module-stagger.visible > *:nth-child(2) { animation: panelSnap 0.6s 0.17s cubic-bezier(0.34,1.3,0.64,1) forwards; }
+.module-stagger.visible > *:nth-child(3) { animation: panelSnap 0.6s 0.29s cubic-bezier(0.34,1.3,0.64,1) forwards; }
+.module-stagger.visible > *:nth-child(4) { animation: panelSnap 0.6s 0.41s cubic-bezier(0.34,1.3,0.64,1) forwards; }

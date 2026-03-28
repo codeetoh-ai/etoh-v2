@@ -1,6 +1,6 @@
 const about1 = () => {
     return (
-        <svg width="1280" height="819" viewBox="0 0 1280 819" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg width="100%" height="100%" viewBox="0 0 1280 819" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g opacity="0.4">
                 <rect width="1280" height="819" fill="url(#pattern0_1_5)" />
                 <rect width="1280" height="819" fill="white" style={{ mixBlendMode: "saturation" }} />
