@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useResponsive } from '../../../hooks/useResponsive'
 import PageLayout from '../../../components/PageLayout'
 import hero1 from '../../../assets/END-END-CARE/HERO1.png'
 import endEndImg from '../../../assets/END-END-CARE/end-end.png'
@@ -25,6 +26,7 @@ const stageCards = [
 ]
 
 export default function EndtoEndCarePage() {
+    const { isMobile, isTablet } = useResponsive()
     const threadRef = useRef(null)
     const noGapsRef = useRef(null)
     const continuousRef = useRef(null)
@@ -105,10 +107,10 @@ export default function EndtoEndCarePage() {
             {/* ── Section 1: Hero ── */}
             <div style={{
                 width: '100%',
-                paddingTop: 128,
-                paddingBottom: 128,
-                paddingLeft: 24,
-                paddingRight: 24,
+                paddingTop: isMobile ? 80 : 128,
+                paddingBottom: isMobile ? 64 : 128,
+                paddingLeft: isMobile ? 16 : 24,
+                paddingRight: isMobile ? 16 : 24,
                 background: 'white',
                 boxSizing: 'border-box',
                 display: 'flex',
@@ -118,8 +120,9 @@ export default function EndtoEndCarePage() {
                     maxWidth: 1232,
                     width: '100%',
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: 48,
+                    flexDirection: isMobile ? 'column' : 'row',
+                    alignItems: isMobile ? 'stretch' : 'center',
+                    gap: isMobile ? 32 : 48,
                 }}>
                     {/* Left: text content */}
                     <div style={{
@@ -170,10 +173,10 @@ export default function EndtoEndCarePage() {
                                         }}
                                         style={{
                                             color: '#001736',
-                                            fontSize: 72,
+                                            fontSize: isMobile ? 36 : isTablet ? 48 : 72,
                                             fontFamily: 'Manrope, sans-serif',
                                             fontWeight: 800,
-                                            lineHeight: '72px',
+                                            lineHeight: isMobile ? '40px' : isTablet ? '52px' : '72px',
                                             ...(line.last && {
                                                 animation: 'connectionPulse 1.4s ease-out 0.9s 1 forwards',
                                                 display: 'inline-block',
@@ -195,7 +198,7 @@ export default function EndtoEndCarePage() {
                                 maxWidth: 672,
                                 paddingTop: 8,
                                 color: '#43474F',
-                                fontSize: 24,
+                                fontSize: isMobile ? 16 : 24,
                                 fontFamily: 'Inter, sans-serif',
                                 fontWeight: 400,
                                 lineHeight: '32px',
@@ -238,7 +241,7 @@ export default function EndtoEndCarePage() {
 
                     {/* Right: hero image — panel-emerge */}
                     <div style={{
-                        flex: '0 0 474px',
+                        flex: isMobile ? '1 1 auto' : '0 0 474px',
                         position: 'relative',
                     }}>
                         {/* Blue panel */}
@@ -256,7 +259,7 @@ export default function EndtoEndCarePage() {
                                 alt="End-to-End Care Platform"
                                 style={{
                                     width: '100%',
-                                    height: 500,
+                                    height: isMobile ? 300 : 500,
                                     objectFit: 'cover',
                                     display: 'block',
                                 }}
@@ -269,10 +272,11 @@ export default function EndtoEndCarePage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: ease, delay: 0.7 }}
                             style={{
-                                position: 'absolute',
-                                left: -24,
-                                bottom: 107,
-                                maxWidth: 320,
+                                position: isMobile ? 'relative' : 'absolute',
+                                left: isMobile ? 0 : -24,
+                                bottom: isMobile ? 'auto' : 107,
+                                marginTop: isMobile ? -24 : 0,
+                                maxWidth: isMobile ? '100%' : 320,
                                 paddingTop: 24,
                                 paddingBottom: 24,
                                 paddingLeft: 24,
@@ -313,8 +317,8 @@ export default function EndtoEndCarePage() {
             {/* ── Section 2: The Single Thread ── */}
             <div style={{
                 width: '100%',
-                paddingTop: 96,
-                paddingBottom: 96,
+                paddingTop: isMobile ? 56 : 96,
+                paddingBottom: isMobile ? 56 : 96,
                 background: '#F3F4F5',
                 boxSizing: 'border-box',
             }}>
@@ -364,7 +368,7 @@ export default function EndtoEndCarePage() {
                     {/* Cards row — stage-arrival */}
                     <div style={{ position: 'relative' }}>
                         {/* thread-draw: connecting line */}
-                        <div style={{ position: 'absolute', left: 0, right: 0, top: 58, height: 2, overflow: 'hidden', zIndex: 0 }}>
+                        <div style={{ position: 'absolute', left: 0, right: 0, top: 58, height: 2, overflow: 'hidden', zIndex: 0, display: isMobile ? 'none' : 'block' }}>
                             <motion.div
                                 initial={{ scaleX: 0 }}
                                 animate={threadInView ? { scaleX: 1 } : {}}
@@ -381,8 +385,8 @@ export default function EndtoEndCarePage() {
 
                         <div style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(5, 1fr)',
-                            gap: 12,
+                            gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2, 1fr)' : 'repeat(5, 1fr)',
+                            gap: isMobile ? 16 : 12,
                             position: 'relative',
                             zIndex: 1,
                         }}>
@@ -400,11 +404,11 @@ export default function EndtoEndCarePage() {
                                             borderRadius: 12,
                                             border: '1px solid rgba(0, 105, 112, 0.30)',
                                             borderBottom: '4px solid #006970',
-                                            padding: '34px 32px',
+                                            padding: isMobile ? '24px 20px' : '34px 32px',
                                             display: 'flex',
                                             flexDirection: 'column',
                                             gap: 0,
-                                            minHeight: 324,
+                                            minHeight: isMobile ? 'auto' : 324,
                                             boxShadow: '0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)',
                                         }}>
                                         {/* Stage dot light */}
@@ -456,11 +460,11 @@ export default function EndtoEndCarePage() {
                                             boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.05)',
                                             borderRadius: 12,
                                             border: '1px solid rgba(196, 198, 208, 0.40)',
-                                            padding: '34px 32px',
+                                            padding: isMobile ? '24px 20px' : '34px 32px',
                                             display: 'flex',
                                             flexDirection: 'column',
                                             gap: 0,
-                                            minHeight: 309,
+                                            minHeight: isMobile ? 'auto' : 309,
                                         }}>
                                         <div style={{
                                             width: 48,
@@ -519,10 +523,10 @@ export default function EndtoEndCarePage() {
             {/* ── Section 3: No More Gaps ── */}
             <div style={{
                 width: '100%',
-                paddingTop: 96,
-                paddingBottom: 96,
-                paddingLeft: 24,
-                paddingRight: 24,
+                paddingTop: isMobile ? 56 : 96,
+                paddingBottom: isMobile ? 56 : 96,
+                paddingLeft: isMobile ? 16 : 24,
+                paddingRight: isMobile ? 16 : 24,
                 background: '#F8F9FA',
                 boxSizing: 'border-box',
                 display: 'flex',
@@ -534,12 +538,13 @@ export default function EndtoEndCarePage() {
                         maxWidth: 1232,
                         width: '100%',
                         display: 'flex',
-                        gap: 64,
-                        alignItems: 'center',
+                        flexDirection: isMobile ? 'column' : 'row',
+                        gap: isMobile ? 32 : 64,
+                        alignItems: isMobile ? 'stretch' : 'center',
                     }}>
                     {/* Left: text content — point-stagger */}
                     <div style={{
-                        flex: '0 0 520px',
+                        flex: isMobile ? '1 1 auto' : '0 0 520px',
                         display: 'flex',
                         flexDirection: 'column',
                         gap: 32,
@@ -676,8 +681,8 @@ export default function EndtoEndCarePage() {
             {/* ── Section 4: Continuous Care ── */}
             <div style={{
                 width: '100%',
-                paddingTop: 96,
-                paddingBottom: 96,
+                paddingTop: isMobile ? 56 : 96,
+                paddingBottom: isMobile ? 56 : 96,
                 position: 'relative',
                 background: '#002B5B',
                 overflow: 'hidden',
