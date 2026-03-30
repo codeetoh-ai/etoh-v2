@@ -34,6 +34,13 @@ import PatientOutcomesPage from './pages/impact/patient-outcomes/PatientOutcomes
 import HealthcareAccessPage from './pages/impact/healthcare-access/HealthcareAccess'
 import PublicHealthMissionPage from './pages/impact/public-health-mission/PublicHealthMission'
 
+// Admin
+import AdminLoginPage from './pages/admin/AdminLogin'
+import AdminLayout from './pages/admin/AdminLayout'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import NewsManagement from './pages/admin/NewsManagement'
+import InsightManagement from './pages/admin/InsightManagement'
+
 // News & Insights
 import NewsInsightsPage from './pages/news-insights/NewsInsights'
 import NewsPage from './pages/news-insights/news/News'
@@ -81,4 +88,16 @@ export const router = createBrowserRouter([
     { path: '/news-insights/news', element: <NewsPage /> },
     { path: '/news-insights/news/:slug', element: <NewsArticlePage /> },
     { path: '/news-insights/insights', element: <InsightsPage /> },
+
+    // Admin
+    { path: '/admin', element: <AdminLoginPage /> },
+    {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+            { path: 'dashboard', element: <AdminDashboard /> },
+            { path: 'news', element: <NewsManagement /> },
+            { path: 'insights', element: <InsightManagement /> },
+        ],
+    },
 ])

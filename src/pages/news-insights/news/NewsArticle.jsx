@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import PageLayout from '../../../components/PageLayout'
 import { useResponsive } from '../../../hooks/useResponsive'
-import { getArticleBySlug, getRelatedArticles } from './newsData'
+import { useNews } from '../../../context/NewsContext'
 
 const ease = [0.22, 1, 0.36, 1]
 const sharp = [0.25, 0.46, 0.45, 0.94]
@@ -13,7 +13,8 @@ export default function NewsArticlePage() {
     const navigate = useNavigate()
     const location = useLocation()
     const { isMobile } = useResponsive()
-    const article = getArticleBySlug(slug)
+    const { getBySlug, getRelated } = useNews()
+    const article = getBySlug(slug)
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -38,7 +39,7 @@ export default function NewsArticlePage() {
         )
     }
 
-    const related = getRelatedArticles(article.relatedSlugs || [])
+    const related = getRelated(article.relatedSlugs || [])
 
     return (
         <PageLayout fullWidth title="" lightHero>
