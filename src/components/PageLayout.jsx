@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import { useResponsive } from '../hooks/useResponsive'
 
-export default function PageLayout({ title, children, fullWidth = false, lightHero = false }) {
+export default function PageLayout({ title, children, fullWidth = false, lightHero = false, noPadBottom = false }) {
     const [open, setOpen] = useState(false)
     const [isNavVisible, setIsNavVisible] = useState(true)
     const navigate = useNavigate()
@@ -55,7 +55,7 @@ export default function PageLayout({ title, children, fullWidth = false, lightHe
 
             {/* Page content */}
             <main style={{
-                paddingBottom: isMobile ? 48 : 80,
+                paddingBottom: noPadBottom ? 0 : (isMobile ? 48 : 80),
                 paddingTop: fullWidth ? 0 : (isMobile ? 96 : 128),
                 paddingLeft: fullWidth ? 0 : (isMobile ? 16 : 32),
                 paddingRight: fullWidth ? 0 : (isMobile ? 16 : 32),
