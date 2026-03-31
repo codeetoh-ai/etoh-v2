@@ -158,7 +158,7 @@ export default function NewsPage() {
                             </motion.div>
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
-                                {pressReleases.map((item, i) => (
+                                {pressReleases.slice(0, 2).map((item, i) => (
                                     <motion.div
                                         key={item.slug}
                                         initial={{ opacity: 0, y: 16 }}
@@ -182,6 +182,31 @@ export default function NewsPage() {
                                         </div>
                                     </motion.div>
                                 ))}
+                                {pressReleases.length > 5 && (
+                                    <div style={{ display: 'flex', padding: '12px 0' }}>
+                                        <button
+                                            onClick={() => navigate('/news-insights/news/list?type=press_release')}
+                                            style={{
+                                                padding: '12px 28px',
+                                                background: 'transparent',
+                                                color: '#001736',
+                                                border: '1px solid #001736',
+                                                fontSize: 14,
+                                                fontFamily: 'Inter',
+                                                fontWeight: 600,
+                                                cursor: 'pointer',
+                                                letterSpacing: 1,
+                                                textTransform: 'uppercase',
+                                                transition: 'all 0.2s',
+                                                borderRadius: '999px'
+                                            }}
+                                            onMouseOver={(e) => { e.currentTarget.style.background = '#001736'; e.currentTarget.style.color = 'white'; }}
+                                            onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#001736'; }}
+                                        >
+                                            Show More
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -202,7 +227,7 @@ export default function NewsPage() {
                             </motion.div>
 
                             <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 40 : 28 }}>
-                                {newsItems.slice(0, 3).map((article, i) => (
+                                {newsItems.slice(0, 2).map((article, i) => (
                                     <motion.div
                                         key={article.slug}
                                         initial={{ opacity: 0, y: 20 }}
@@ -233,6 +258,32 @@ export default function NewsPage() {
                                     </motion.div>
                                 ))}
                             </div>
+                            
+                            {newsItems.length > 10 && (
+                                <div style={{ display: 'flex', marginTop: 24 }}>
+                                    <button
+                                        onClick={() => navigate('/news-insights/news/list?type=news')}
+                                        style={{
+                                            padding: '12px 28px',
+                                            background: 'transparent',
+                                            color: '#001736',
+                                            border: '1px solid #001736',
+                                            fontSize: 14,
+                                            fontFamily: 'Inter',
+                                            fontWeight: 600,
+                                            cursor: 'pointer',
+                                            letterSpacing: 1,
+                                            textTransform: 'uppercase',
+                                            transition: 'all 0.2s',
+                                            borderRadius: '999px'
+                                        }}
+                                        onMouseOver={(e) => { e.currentTarget.style.background = '#001736'; e.currentTarget.style.color = 'white'; }}
+                                        onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#001736'; }}
+                                    >
+                                        Show More News
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}

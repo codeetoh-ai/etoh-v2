@@ -184,7 +184,56 @@ function ArticleEditor({ article, onSave, onCancel, allSlugs }) {
                             </div>
                             <div>
                                 <label style={labelStyle}>Date</label>
-                                <input style={inputStyle} value={form.date} onChange={(e) => set('date', e.target.value)} placeholder="e.g. March 30, 2026" />
+                                <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                                    <input
+                                        style={{ ...inputStyle, paddingRight: 40 }}
+                                        value={form.date}
+                                        onChange={(e) => set('date', e.target.value)}
+                                        onBlur={(e) => {
+                                            const val = e.target.value.trim()
+                                            if (!val) return
+                                            
+                                            // Handle various formats including dd/mm/yyyy
+                                            let d = new Date(val)
+                                            if (isNaN(d.getTime()) && val.includes('/')) {
+                                                const parts = val.split('/')
+                                                if (parts.length === 3) {
+                                                    // Assuming dd/mm/yyyy format based on user comment
+                                                    d = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`)
+                                                }
+                                            }
+                                            
+                                            // Make sure the date is valid before applying the '30 March 2025' format
+                                            if (!isNaN(d.getTime())) {
+                                                set('date', d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }))
+                                            }
+                                        }}
+                                        placeholder="e.g. 30 March 2026"
+                                    />
+                                    <div style={{ position: 'absolute', right: 10, width: 24, height: 24 }}>
+                                        <input
+                                            type="date"
+                                            style={{ position: 'absolute', inset: 0, opacity: 0, cursor: 'pointer', width: '100%', height: '100%' }}
+                                            onChange={(e) => {
+                                                if (!e.target.value) return
+                                                // the date picked is guaranteed to be valid and in yyyy-mm-dd form, but it's timezone-aware if parsed directly.
+                                                // So we parse it properly:
+                                                const parts = e.target.value.split('-')
+                                                const d = new Date(parts[0], parts[1] - 1, parts[2])
+                                                
+                                                if (!isNaN(d.getTime())) {
+                                                    set('date', d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }))
+                                                }
+                                            }}
+                                        />
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: 'absolute', top: 2, left: 2, pointerEvents: 'none' }}>
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

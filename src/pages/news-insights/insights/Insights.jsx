@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import PageLayout from '../../../components/PageLayout'
 import { useResponsive } from '../../../hooks/useResponsive'
+import { useInsights } from '../../../context/InsightsContext'
 import doctor1 from '../../the-system/for-patients/pre-admission/assets/doctor1.png'
 import doctor2 from '../../the-system/for-patients/pre-admission/assets/doctor2.png'
 
@@ -98,8 +100,26 @@ function CountUp({ end, duration = 1.2, active, decimals = 0, suffix = '' }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
+const insightTypeLabels = {
+    whitepaper: 'Whitepaper',
+    report: 'Report',
+    research_brief: 'Research Brief',
+    case_study: 'Case Study',
+}
+
+const insightTypeColors = {
+    whitepaper: { bg: '#EEF2FF', color: '#4F46E5' },
+    report: { bg: '#FEF3C7', color: '#D97706' },
+    research_brief: { bg: '#E7F6F6', color: '#006970' },
+    case_study: { bg: '#FCE7F3', color: '#DB2777' },
+}
+
 export default function InsightsPage() {
+    const navigate = useNavigate()
     const { isMobile } = useResponsive()
+    const { insights, loading: insightsLoading } = useInsights()
+    const insightsGridRef = useRef(null)
+    const insightsGridInView = useInView(insightsGridRef, { once: true, amount: 0.1 })
     const sectionHeaderRef = useRef(null)
     const metricCardRef    = useRef(null)
     const lowerGridRef     = useRef(null)
@@ -578,6 +598,65 @@ export default function InsightsPage() {
                         ))}
                     </div>
                 </div>
+
+                {/* ══ SECTION 4 — Published Insights Grid ═════════════════════════ */}
+                {!insightsLoading && insights.length > 0 && (
+                    <div ref={insightsGridRef} style={{ paddingTop: isMobile ? 40 : 64, paddingBottom: isMobile ? 48 : 80, display: 'flex', flexDirection: 'column', gap: 40 }}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={insightsGridInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, ease: sharp }}
+                            style={{ paddingBottom: 16, borderBottom: '1px rgba(196, 198, 208, 0.20) solid', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}
+                        >
+                            <span style={{ color: '#001736', fontSize: 28, fontFamily: 'Manrope', fontWeight: 800, lineHeight: '36px' }}>PUBLISHED INSIGHTS</span>
+                            <span style={{ color: '#43474F', fontSize: 10, fontFamily: 'Inter', fontWeight: 700, textTransform: 'uppercase', lineHeight: '15px', letterSpacing: 3 }}>Whitepapers, Reports & Research</span>
+                        </motion.div>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: isMobile ? 32 : 28 }}>
+                            {insights.slice(0, 6).map((item, i) => {
+                                const tc = insightTypeColors[item.insightType] || { bg: '#E7E8E9', color: '#43474F' }
+                                return (
+                                    <motion.div
+                                        key={item.slug}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={insightsGridInView ? { opacity: 1, y: 0 } : {}}
+                                        transition={{ duration: 0.6, ease: ease, delay: 0.1 + i * 0.08 }}
+                                        style={{ display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
+                                        onClick={() => navigate(`/news-insights/insights/${item.slug}`)}
+                                    >
+                                        {item.heroImage && (
+                                            <div style={{ background: '#E7E8E9', overflow: 'hidden', marginBottom: 20, borderRadius: 4 }}>
+                                                <img style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' }} src={item.heroImage} alt={item.title} />
+                                            </div>
+                                        )}
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                                            <span style={{ display: 'inline-block', padding: '3px 10px', background: tc.bg, borderRadius: 20, color: tc.color, fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                                                {insightTypeLabels[item.insightType] || item.insightType}
+                                            </span>
+                                            <span style={{ color: '#006970', fontSize: 10, fontFamily: 'Inter', fontWeight: 600, textTransform: 'uppercase', lineHeight: '15px', letterSpacing: 1 }}>
+                                                {item.category}
+                                            </span>
+                                        </div>
+                                        <div style={{ color: '#001736', fontSize: 18, fontFamily: 'Manrope', fontWeight: 700, lineHeight: '26px', marginBottom: 10 }}>
+                                            {item.title}
+                                        </div>
+                                        <div style={{ color: '#43474F', fontSize: 14, fontFamily: 'Inter', fontWeight: 400, lineHeight: '21px', marginBottom: 16, flex: 1 }}>
+                                            {item.excerpt || ''}
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                            <span style={{ color: '#43474F', fontSize: 11, fontFamily: 'Inter', fontWeight: 500 }}>
+                                                {item.author.name} · {item.date}
+                                            </span>
+                                            <span style={{ color: '#001736', fontSize: 12, fontFamily: 'Inter', fontWeight: 600, textDecoration: 'underline', textTransform: 'uppercase', lineHeight: '16px', letterSpacing: 1.20 }}>
+                                                READ
+                                            </span>
+                                        </div>
+                                    </motion.div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                )}
 
             </div>
         </PageLayout>

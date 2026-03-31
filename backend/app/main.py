@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .routes.auth_routes import router as auth_router
 from .routes.news_routes import router as news_router
+from .routes.insights_routes import router as insights_router
 
 app = FastAPI(
     title="ETOH Admin API",
@@ -22,6 +23,7 @@ app.add_middleware(
 # Routes
 app.include_router(auth_router)
 app.include_router(news_router)
+app.include_router(insights_router)
 
 
 @app.get("/")
