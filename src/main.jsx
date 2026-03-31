@@ -5,12 +5,15 @@ import './index.css'
 import { router } from './router'
 import { NewsProvider } from './context/NewsContext'
 import { InsightsProvider } from './context/InsightsContext'
+import { ClinicalProvider } from './context/ClinicalContext'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NewsProvider>
       <InsightsProvider>
-        <RouterProvider router={router} />
+        <ClinicalProvider>
+          <RouterProvider router={router} />
+        </ClinicalProvider>
       </InsightsProvider>
     </NewsProvider>
   </StrictMode>,

@@ -47,6 +47,7 @@ import NewsPage from './pages/news-insights/news/News'
 import AllNewsListPage from './pages/news-insights/news/AllNewsList'
 import NewsArticlePage from './pages/news-insights/news/NewsArticle'
 import InsightsPage from './pages/news-insights/insights/Insights'
+import AllInsightsListPage from './pages/news-insights/insights/AllInsightsList'
 import InsightArticlePage from './pages/news-insights/insights/InsightArticle'
 
 export const router = createBrowserRouter([
@@ -91,6 +92,7 @@ export const router = createBrowserRouter([
     { path: '/news-insights/news/list', element: <AllNewsListPage /> },
     { path: '/news-insights/news/:slug', element: <NewsArticlePage /> },
     { path: '/news-insights/insights', element: <InsightsPage /> },
+    { path: '/news-insights/insights/list', element: <AllInsightsListPage /> },
     { path: '/news-insights/insights/:slug', element: <InsightArticlePage /> },
 
     // Admin
