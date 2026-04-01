@@ -608,10 +608,10 @@ export default function TechnologyPage() {
                             transition={{ duration: 0.5, ease: sharp, delay: 0.2 }}
                             style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 12 : 24, justifyContent: 'center', width: isMobile ? '100%' : undefined }}
                         >
-                            <button className="btn-teal" style={{ padding: '16px 32px', background: '#006970', borderRadius: 4, border: 'none', cursor: 'pointer', fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 16, lineHeight: '24px', color: 'white' }}>
+                            <button className="btn-teal" onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Request Full Audit Report'} style={{ padding: '16px 32px', background: '#006970', borderRadius: 4, border: 'none', cursor: 'pointer', fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 16, lineHeight: '24px', color: 'white' }}>
                                 Request Full Audit Report
                             </button>
-                            <button className="btn-outline-light" style={{ padding: '16px 32px', background: 'transparent', borderRadius: 4, border: 'none', outline: '1px solid rgba(255,255,255,0.30)', outlineOffset: '-1px', cursor: 'pointer', fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 16, lineHeight: '24px', color: 'white' }}>
+                            <button className="btn-outline-light" onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Speak to an Architect'} style={{ padding: '16px 32px', background: 'transparent', borderRadius: 4, border: 'none', outline: '1px solid rgba(255,255,255,0.30)', outlineOffset: '-1px', cursor: 'pointer', fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 16, lineHeight: '24px', color: 'white' }}>
                                 Speak to an Architect
                             </button>
                         </motion.div>

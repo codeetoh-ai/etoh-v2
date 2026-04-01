@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import PageLayout from '../../../../components/PageLayout'
 import hero from './assets/hero.png'
 import section3 from './assets/section3.png'
@@ -275,6 +276,7 @@ const anim = (name, duration, delayMs, easing = 'cubic-bezier(0.4,0,0.2,1)') =>
     `${name} ${duration} ${easing} ${delayMs}ms both`
 
 export default function PreAdmissionPage() {
+    const navigate = useNavigate()
     const intakeSectionRef = useRef(null)
     const digitalSectionRef = useRef(null)
     const [intakeVisible, setIntakeVisible] = useState(false)
@@ -377,6 +379,7 @@ export default function PreAdmissionPage() {
                         {/* CTA Buttons */}
                         <div className="pa-buttons-row">
                             <button
+                                onClick={() => { window.scrollTo(0, 0); navigate('/the-system/for-patients/health-journey') }}
                                 style={{
                                     paddingLeft: 32,
                                     paddingRight: 32,
@@ -404,6 +407,7 @@ export default function PreAdmissionPage() {
                                 <ArrowRight size={16} color="white" strokeWidth={2} />
                             </button>
                             <button
+                                onClick={() => { window.scrollTo(0, 0); navigate('/the-system/for-patients/health-journey') }}
                                 style={{
                                     paddingLeft: 32,
                                     paddingRight: 32,
@@ -898,6 +902,7 @@ export default function PreAdmissionPage() {
                         position: 'relative',
                     }}>
                         <button
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Secure Login Request'}
                             style={{
                                 paddingLeft: 40,
                                 paddingRight: 40,
@@ -920,6 +925,7 @@ export default function PreAdmissionPage() {
                             Secure Login
                         </button>
                         <button
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Help Center'}
                             style={{
                                 paddingLeft: 40,
                                 paddingRight: 40,

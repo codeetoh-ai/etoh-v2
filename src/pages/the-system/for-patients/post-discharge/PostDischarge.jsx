@@ -547,6 +547,7 @@ export default function PostDischargePage() {
                             {/* CTA */}
                             <button
                                 className="pd-portal-btn"
+                                onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Enter Recovery Portal'}
                                 style={{
                                     display: 'inline-flex',
                                     alignSelf: 'flex-start',

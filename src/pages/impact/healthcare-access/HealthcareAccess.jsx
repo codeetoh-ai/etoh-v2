@@ -189,6 +189,7 @@ export default function HealthcareAccessPage() {
                     >
                         <div
                             className="btn-access"
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=View Full Access Report'}
                             style={{ paddingLeft: 32, paddingRight: 32, paddingTop: 20, paddingBottom: 20, background: '#006970', borderRadius: 6, boxShadow: '0px 8px 10px -6px rgba(0,0,0,0.10), 0px 20px 25px -5px rgba(0,0,0,0.10)', display: 'inline-flex', alignItems: 'center', gap: 16, cursor: 'pointer' }}
                         >
                             <div style={{ color: 'white', fontSize: 16, fontFamily: 'Inter', fontWeight: 700, lineHeight: '24px' }}>View Full Access Report</div>

@@ -15,12 +15,8 @@ const ease = [0.22, 1, 0.36, 1]
 const sharpEase = [0.25, 0.46, 0.45, 0.94]
 
 const heroLines = [
-    'The full',
-    'picture of',
-    'every patient.',
-    'In the pocket',
-    'of every',
-    'clinician.',
+    'The full picture of every patient.',
+    'In the pocket of every clinician.',
 ]
 
 export default function ForCliniciansPage() {
@@ -210,10 +206,10 @@ export default function ForCliniciansPage() {
                                             delay: 0.2 + i * 0.08,
                                         }}
                                         style={{
-                                            fontSize: isMobile ? 40 : 72,
+                                            fontSize: isMobile ? 32 : 52,
                                             fontFamily: 'Manrope, sans-serif',
                                             fontWeight: 800,
-                                            lineHeight: isMobile ? '44px' : '72px',
+                                            lineHeight: isMobile ? '40px' : '62px',
                                             color: 'white',
                                         }}
                                     >
@@ -254,7 +250,7 @@ export default function ForCliniciansPage() {
                                 alignItems: 'center',
                                 flexWrap: 'wrap',
                             }}>
-                            <button className="btn-press" style={{
+                            <button className="btn-press" onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Request Deployment'} style={{
                                 paddingLeft: 32,
                                 paddingRight: 32,
                                 paddingTop: 16,
@@ -273,7 +269,7 @@ export default function ForCliniciansPage() {
                             }}>
                                 Request Deployment
                             </button>
-                            <button className="btn-press" style={{
+                            <button className="btn-press" onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=System Specs'} style={{
                                 paddingLeft: 32,
                                 paddingRight: 32,
                                 paddingTop: 16,

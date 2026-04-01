@@ -9,7 +9,6 @@ export const menuData = [
         children: [
             { title: "Our Mission", slug: "our-mission" },
             { title: "How We Work", slug: "how-we-work" },
-            { title: "Team", slug: "team" },
             { title: "Careers", slug: "careers" },
         ],
     },

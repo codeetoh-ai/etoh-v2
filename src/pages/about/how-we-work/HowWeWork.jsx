@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import PageLayout from '../../../components/PageLayout'
-import Howwework1 from '../../../assets/Howwework1.png'
+import threeDimension from './three-dimension.jpg'
 import Howwework2 from '../../../assets/Howwework2.png'
 import Howwework3 from '../../../assets/Howwework3.png'
 import Howwework4 from '../../../assets/Howwework4.png'
@@ -11,6 +12,7 @@ import { useResponsive } from '../../../hooks/useResponsive'
 const ease = [0.25, 0.46, 0.45, 0.94]
 
 export default function HowWeWorkPage() {
+    const navigate = useNavigate()
     const { isMobile, isTablet } = useResponsive()
     const compact = isMobile || isTablet
     const px = isMobile ? 16 : 32
@@ -119,11 +121,9 @@ export default function HowWeWorkPage() {
                         </motion.div>
                     </div>
 
-                    {/* Right: dimensional-settle + hover-drift */}
+                    {/* Right: image */}
                     <div style={{ flex: 1.2, position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                         <div style={{ width: '100%', maxWidth: 560, aspectRatio: '1', position: 'absolute', left: -16, top: -16, background: 'linear-gradient(45deg, rgba(0, 105, 112, 0.10) 0%, rgba(0, 105, 112, 0) 100%)', borderRadius: 12, filter: 'blur(20px)' }} />
-
-                        {/* dimensional-settle */}
                         <motion.div
                             ref={heroImageRef}
                             initial={{ opacity: 0, rotateY: 12, scale: 0.92 }}
@@ -131,15 +131,27 @@ export default function HowWeWorkPage() {
                             transition={{ duration: 1.0, ease }}
                             style={{ perspective: '1000px', width: '100%', maxWidth: 560, position: 'relative' }}
                         >
-                            {/* hover-drift — starts after settle */}
                             <motion.div
                                 animate={heroImageInView ? { y: [0, -4, 0, 4, 0] } : {}}
                                 transition={{ delay: 1.5, duration: 7, repeat: Infinity, ease: 'easeInOut' }}
                             >
-                                <img style={{ width: '100%', borderRadius: 8 }} src={Howwework1} alt="Platform in three dimensions" />
+                                <div style={{ width: '100%', aspectRatio: '1 / 1', borderRadius: 16, overflow: 'hidden' }}>
+                                    <img
+                                        src={threeDimension}
+                                        alt="Platform in three dimensions"
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            objectPosition: '93% center',
+                                            display: 'block',
+                                        }}
+                                    />
+                                </div>
                             </motion.div>
                         </motion.div>
                     </div>
+
                 </div>
             </div>
 
@@ -467,6 +479,7 @@ export default function HowWeWorkPage() {
                     >
                         <motion.div
                             whileHover={{ y: -3, boxShadow: '0 20px 40px rgba(0,23,54,0.32)', transition: { duration: 0.2 } }}
+                            onClick={() => { window.scrollTo(0, 0); navigate('/the-system/end-to-end-care') }}
                             style={{ paddingLeft: isMobile ? 28 : 40, paddingRight: isMobile ? 28 : 40, paddingTop: 16, paddingBottom: 16, position: 'relative', background: '#001736', borderRadius: 6, display: 'inline-flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer', boxShadow: '0px 8px 10px -6px rgba(0,0,0,0.10), 0px 20px 25px -5px rgba(0,0,0,0.10)' }}
                         >
                             <div style={{ color: 'white', fontSize: isMobile ? 16 : 18, fontFamily: 'Manrope', fontWeight: 700, lineHeight: '28px', textAlign: 'center' }}>Schedule a Deep Dive</div>
@@ -525,16 +538,18 @@ export default function HowWeWorkPage() {
                             <motion.div
                                 variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }}
                                 whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                                onClick={() => { window.scrollTo(0, 0); navigate('/news-insights/insights') }}
                                 style={{ paddingLeft: 32, paddingRight: 32, paddingTop: 13, paddingBottom: 13, background: 'white', borderRadius: 6, display: 'inline-flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}
                             >
-                                <div style={{ color: '#001736', fontSize: 16, fontFamily: 'Inter', fontWeight: 700, lineHeight: '24px', textAlign: 'center' }}>Download Blueprint</div>
+                                <div style={{ color: '#001736', fontSize: 16, fontFamily: 'Inter', fontWeight: 700, lineHeight: '24px', textAlign: 'center' }}>Visit Insights</div>
                             </motion.div>
                             <motion.div
                                 variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }}
                                 whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                                onClick={() => { window.scrollTo(0, 0); navigate('/news-insights/news') }}
                                 style={{ paddingLeft: 32, paddingRight: 32, paddingTop: 12, paddingBottom: 12, borderRadius: 6, outline: '1px solid rgba(255,255,255,0.20)', outlineOffset: -1, display: 'inline-flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}
                             >
-                                <div style={{ color: 'white', fontSize: 16, fontFamily: 'Inter', fontWeight: 700, lineHeight: '24px', textAlign: 'center' }}>View Case Studies</div>
+                                <div style={{ color: 'white', fontSize: 16, fontFamily: 'Inter', fontWeight: 700, lineHeight: '24px', textAlign: 'center' }}>Visit News</div>
                             </motion.div>
                         </motion.div>
                     </div>

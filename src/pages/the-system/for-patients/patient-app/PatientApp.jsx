@@ -672,6 +672,7 @@ export default function PatientAppPage() {
                                 <div style={{ borderTop: '1px solid rgba(196,198,208,0.10)', paddingTop: 32 }}>
                                     <button
                                         className="pa-btn-hover"
+                                        onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Contact Specialist'}
                                         style={{
                                             width: '100%', padding: '16px', background: '#001736',
                                             borderRadius: 8, border: 'none', cursor: 'pointer',
@@ -753,6 +754,7 @@ export default function PatientAppPage() {
                                     </div>
                                     <button
                                         className="pa-btn-hover"
+                                        onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Explore Detailed Model'}
                                         style={{
                                             width: '100%', padding: '16px', background: 'white',
                                             borderRadius: 4, border: 'none', cursor: 'pointer',

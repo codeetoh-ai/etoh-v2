@@ -748,7 +748,7 @@ export default function GovernmentHealthSystemsPage() {
                         gap: 16,
                         width: isMobile ? '100%' : 'auto',
                     }}>
-                        <button style={{
+                        <button onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Request a Deployment Brief'} style={{
                             paddingTop: 20,
                             paddingBottom: 20,
                             paddingLeft: isMobile ? 32 : 48,
@@ -767,7 +767,7 @@ export default function GovernmentHealthSystemsPage() {
                         }}>
                             Request a Deployment Brief
                         </button>
-                        <button style={{
+                        <button onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=View District Hospital Deployments'} style={{
                             paddingTop: 20,
                             paddingBottom: 20,
                             paddingLeft: isMobile ? 32 : 48,

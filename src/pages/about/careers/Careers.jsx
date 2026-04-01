@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import PageLayout from '../../../components/PageLayout'
 import { useResponsive } from '../../../hooks/useResponsive'
 import { useInView } from '../../../hooks/useInView'
-import careerImg from '../../../assets/Career.png'
+import careerImg from './career-new.jpg'
+import careerBg from '../../../assets/Career.png'
 
 /* ── animation helpers ─────────────────────────────────────────────────── */
 
@@ -332,33 +333,32 @@ export default function CareersPage() {
                             flex: 1,
                             minHeight: isMobile ? 260 : 400,
                             padding: isMobile ? 24 : 32,
-                            background: '#001736',
                             border: '1px solid #001736',
                             borderRadius: 8,
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'flex-start',
                             gap: 16,
+                            position: 'relative',
+                            overflow: 'hidden',
                             ...fadeFromLeft(cultureVisible, 0.15),
                         }}>
-                            <div style={{
-                                color: '#7594CA', fontSize: 12, fontFamily: 'Inter',
-                                fontWeight: '400', textTransform: 'uppercase',
-                                lineHeight: '16px', letterSpacing: 1.20,
-                            }}>
+                            {/* Background image with dark overlay */}
+                            <img src={careerBg} alt="" style={{
+                                position: 'absolute', inset: 0,
+                                width: '100%', height: '100%',
+                                objectFit: 'cover',
+                                filter: 'grayscale(40%) brightness(0.35)',
+                                pointerEvents: 'none',
+                            }} />
+                            {/* Content sits above the image */}
+                            <div style={{ position: 'relative', zIndex: 1, color: '#7594CA', fontSize: 12, fontFamily: 'Inter', fontWeight: '400', textTransform: 'uppercase', lineHeight: '16px', letterSpacing: 1.20 }}>
                                 Culture
                             </div>
-                            <div style={{
-                                color: 'white', fontSize: isMobile ? 20 : 24,
-                                fontFamily: 'Manrope', fontWeight: '700', lineHeight: '32px',
-                            }}>
+                            <div style={{ position: 'relative', zIndex: 1, color: 'white', fontSize: isMobile ? 20 : 24, fontFamily: 'Manrope', fontWeight: '700', lineHeight: '32px' }}>
                                 Radical Transparency
                             </div>
-                            <div style={{
-                                color: 'rgba(255,255,255,0.80)', fontSize: 14,
-                                fontFamily: 'Inter', fontWeight: '400',
-                                lineHeight: '22px', wordWrap: 'break-word',
-                            }}>
+                            <div style={{ position: 'relative', zIndex: 1, color: 'rgba(255,255,255,0.80)', fontSize: 14, fontFamily: 'Inter', fontWeight: '400', lineHeight: '22px', wordWrap: 'break-word' }}>
                                 We don't hide behind jargon. We document every decision, confront every bug, and celebrate the brutal honesty required to fix a broken industry.
                             </div>
                         </div>
@@ -384,7 +384,6 @@ export default function CareersPage() {
                                     height: '100%',
                                     objectFit: 'cover',
                                     display: 'block',
-                                    filter: 'grayscale(100%)',
                                     ...maskReveal(imageVisible, 0.1),
                                 }}
                             />
@@ -536,7 +535,7 @@ export default function CareersPage() {
                                     color: '#001736', fontSize: 20,
                                     fontFamily: 'Inter', fontWeight: '700', lineHeight: '28px',
                                 }}>
-                                    careers@etoh.com
+                                    codeetoh@gmail.com
                                 </div>
                             </div>
                         </div>
@@ -717,7 +716,7 @@ export default function CareersPage() {
                         width: isMobile ? '100%' : 'auto',
                         ...fadeUp(ctaVisible, 0.38),
                     }}>
-                        <button className="hover-lift glass-shimmer" style={{
+                        <button className="hover-lift glass-shimmer" onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Join the Mission'} style={{
                             paddingTop: 20, paddingBottom: 20,
                             paddingLeft: isMobile ? 32 : 48,
                             paddingRight: isMobile ? 32 : 48,
@@ -730,7 +729,7 @@ export default function CareersPage() {
                         }}>
                             Join the Mission
                         </button>
-                        <button className="hover-lift glass-shimmer" style={{
+                        <button className="hover-lift glass-shimmer" onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Talk to a Founder'} style={{
                             paddingTop: 20, paddingBottom: 20,
                             paddingLeft: isMobile ? 32 : 48,
                             paddingRight: isMobile ? 32 : 48,

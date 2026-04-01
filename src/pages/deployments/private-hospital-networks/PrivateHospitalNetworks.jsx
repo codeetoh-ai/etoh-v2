@@ -462,6 +462,7 @@ export default function PrivateHospitalNetworksPage() {
                     }}>
                         <button
                             className="phn-hero-btn phn-hero-btn-primary"
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Request Private Network Consultation'}
                             style={{
                                 paddingLeft: 32,
                                 paddingRight: 32,
@@ -484,6 +485,7 @@ export default function PrivateHospitalNetworksPage() {
                         </button>
                         <button
                             className="phn-hero-btn phn-hero-btn-ghost"
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=View Network Capabilities'}
                             style={{
                                 paddingLeft: 32,
                                 paddingRight: 32,
@@ -1076,6 +1078,7 @@ export default function PrivateHospitalNetworksPage() {
                     <div className="phn-cta-buttons">
                         <button
                             className="phn-cta-btn phn-cta-btn-primary"
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Request Private Network Consultation'}
                             style={{
                                 paddingLeft: 40, paddingRight: 40,
                                 paddingTop: 20,  paddingBottom: 20,
@@ -1100,6 +1103,7 @@ export default function PrivateHospitalNetworksPage() {
                         </button>
                         <button
                             className="phn-cta-btn phn-cta-btn-ghost"
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Speak with Deployment Team'}
                             style={{
                                 paddingLeft: 40, paddingRight: 40,
                                 paddingTop: 20,  paddingBottom: 20,

@@ -3,6 +3,7 @@ import PageLayout from '../../../components/PageLayout'
 import { useInView } from '../../../hooks/useInView'
 import { useResponsive } from '../../../hooks/useResponsive'
 import labImg from './section2.png'
+import clinicalEvidenceImg from './clinical-evidence.jpg'
 
 const outcomeMeasures = [
     {
@@ -201,7 +202,7 @@ export default function ClinicalEvidencePage() {
                             }}
                         >
                             <img
-                                src={labImg}
+                                src={clinicalEvidenceImg}
                                 alt="Clinical Research"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                             />

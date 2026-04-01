@@ -117,6 +117,7 @@ export default function HospitalInfrastructurePage() {
                         }}>
                             <button
                                 className={mounted ? 'signal-rise' : ''}
+                                onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Request Infrastructure Audit'}
                                 style={{
                                     paddingLeft: 32, paddingRight: 32,
                                     paddingTop: 17, paddingBottom: 17,
@@ -135,6 +136,7 @@ export default function HospitalInfrastructurePage() {
                             </button>
                             <button
                                 className={mounted ? 'signal-rise' : ''}
+                                onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=View Documentation'}
                                 style={{
                                     paddingLeft: 32, paddingRight: 32,
                                     paddingTop: 16, paddingBottom: 16,
@@ -753,6 +755,7 @@ export default function HospitalInfrastructurePage() {
                     }}>
                         <button
                             className={ctaVisible ? 'signal-rise' : ''}
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Contact Sales Engineering'}
                             style={{
                                 paddingLeft: 40, paddingRight: 40,
                                 paddingTop: 21, paddingBottom: 21,
@@ -770,6 +773,7 @@ export default function HospitalInfrastructurePage() {
                         </button>
                         <button
                             className={ctaVisible ? 'signal-rise' : ''}
+                            onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=View Performance Data'}
                             style={{
                                 paddingLeft: 40, paddingRight: 40,
                                 paddingTop: 20, paddingBottom: 20,

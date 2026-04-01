@@ -750,6 +750,7 @@ export default function HealthJourneyPage() {
                         <div className="hj-cta-buttons" style={{ display: 'flex', gap: 16, flexShrink: 0 }}>
                             <button
                                 className="hj-btn-primary"
+                                onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=Initialize Sync'}
                                 style={{
                                     padding: '13px 32px',
                                     background: 'linear-gradient(90deg, #006970 0%, #004F54 100%)',
@@ -767,6 +768,7 @@ export default function HealthJourneyPage() {
                             </button>
                             <button
                                 className="hj-btn-secondary"
+                                onClick={() => window.location.href = 'mailto:codeetoh@gmail.com?subject=View Data Logs'}
                                 style={{
                                     padding: '12px 32px',
                                     background: 'transparent',
