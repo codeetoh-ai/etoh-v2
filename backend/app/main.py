@@ -20,6 +20,7 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "https://etoh.vercel.app",
         "https://etoh-v2.vercel.app",
+        "https://etoh-sh81.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
