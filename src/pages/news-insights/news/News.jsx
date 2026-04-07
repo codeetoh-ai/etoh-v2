@@ -115,14 +115,14 @@ export default function NewsPage() {
 
     if (loading) {
         return (
-            <PageLayout fullWidth title="" lightHero noPadBottom>
+            <PageLayout fullWidth title="" lightHero noPadBottom seoTitle="News" seoDescription="The latest news, press releases, and coverage of ETOH Health — updates from the operating layer of modern healthcare.">
                 <SkeletonLoading isMobile={isMobile} />
             </PageLayout>
         )
     }
 
     return (
-        <PageLayout fullWidth title="" lightHero noPadBottom>
+        <PageLayout fullWidth title="" lightHero noPadBottom seoTitle="News" seoDescription="The latest news, press releases, and coverage of ETOH Health — updates from the operating layer of modern healthcare.">
             <style>{shimmerStyle}</style>
             <div style={{ fontFamily: "'Inter', sans-serif" }}>
 

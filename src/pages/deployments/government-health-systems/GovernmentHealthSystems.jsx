@@ -110,7 +110,7 @@ export default function GovernmentHealthSystemsPage() {
     }, [])
 
     return (
-        <PageLayout title="Government Health Systems" fullWidth={true}>
+        <PageLayout title="Government Health Systems" fullWidth={true} seoDescription="ETOH Health for government health systems — scalable hospital infrastructure deployments for public healthcare, serving millions across national networks.">
             <style>{GHS_KEYFRAMES}</style>
 
             {/* Section 1: Hero */}

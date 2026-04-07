@@ -25,7 +25,7 @@ export default function PublicHealthMissionPage() {
     const xLg = isMobile ? 24 : 80
 
     return (
-        <PageLayout title="Public Health Mission" fullWidth={true} lightHero>
+        <PageLayout title="Public Health Mission" fullWidth={true} lightHero seoDescription="ETOH Health's public health mission — building infrastructure for population-level health management across government and public healthcare networks.">
             <style>{`
                 @keyframes glassSweep {
                     0%   { left: -70%; }

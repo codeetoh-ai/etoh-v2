@@ -21,7 +21,7 @@ export default function HospitalInfrastructurePage() {
     const [ctaRef,  ctaVisible]  = useInView()
 
     return (
-        <PageLayout fullWidth={true} lightHero>
+        <PageLayout fullWidth={true} lightHero seoTitle="Hospital Infrastructure" seoDescription="ETOH Health's hospital infrastructure platform — real-time capacity tracking, predictive staffing, and centralized command center for modern hospital operations.">
 
             {/* ── Section 1: Hero ── */}
             <div style={{

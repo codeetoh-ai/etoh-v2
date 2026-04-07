@@ -209,7 +209,7 @@ export default function PatientAppPage() {
     }, [clinicalVisible])
 
     return (
-        <PageLayout fullWidth lightHero>
+        <PageLayout fullWidth lightHero seoTitle="Patient App" seoDescription="ETOH Health's patient app — extending hospital care beyond the walls with automated follow-ups, real-time health tracking, and frictionless communication.">
             <style>{KF}</style>
             <div style={{ background: 'white', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
                 <div style={{ maxWidth: 1184, margin: '0 auto', padding: '64px 24px 80px' }}>

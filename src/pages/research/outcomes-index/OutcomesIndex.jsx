@@ -158,7 +158,7 @@ export default function OutcomesIndexPage() {
     const metricValue = useCounter(94.2, metricCardInView, 1200, 1)
 
     return (
-        <PageLayout title="Outcomes Index" fullWidth={true} lightHero>
+        <PageLayout title="Outcomes Index" fullWidth={true} lightHero seoDescription="ETOH Health Outcomes Index — tracking measurable improvements in patient outcomes, operational efficiency, and healthcare delivery across deployed institutions.">
             <style>{`
                 @keyframes glassSweep {
                     0%   { left: -70%; }

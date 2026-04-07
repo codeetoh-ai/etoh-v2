@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home -->
+  <url><loc>https://etoh.it.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <!-- About -->
+  <url><loc>https://etoh.it.com/about/our-mission</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/about/how-we-work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/about/team</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/about/careers</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- The System -->
+  <url><loc>https://etoh.it.com/the-system</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://etoh.it.com/the-system/hospital-infrastructure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/the-system/for-clinicians</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/the-system/for-patients/pre-admission</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/the-system/for-patients/patient-app</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/the-system/for-patients/health-journey</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/the-system/for-patients/post-discharge</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/the-system/end-to-end-care</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Deployments -->
+  <url><loc>https://etoh.it.com/deployments</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/deployments/government-health-systems</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/deployments/private-hospital-networks</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Research -->
+  <url><loc>https://etoh.it.com/research</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/research/clinical-evidence</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/research/technology</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/research/outcomes-index</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Impact -->
+  <url><loc>https://etoh.it.com/impact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/impact/patient-outcomes</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/impact/healthcare-access</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/impact/public-health-mission</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- News & Insights -->
+  <url><loc>https://etoh.it.com/news-insights</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://etoh.it.com/news-insights/news</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/news-insights/news/list</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://etoh.it.com/news-insights/insights</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://etoh.it.com/news-insights/insights/list</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+</urlset>

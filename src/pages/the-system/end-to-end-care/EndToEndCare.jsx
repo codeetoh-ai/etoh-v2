@@ -38,7 +38,7 @@ export default function EndtoEndCarePage() {
     const ctaInView = useInView(ctaRef, { once: true, amount: 0.25 })
 
     return (
-        <PageLayout fullWidth={true} lightHero>
+        <PageLayout fullWidth={true} lightHero seoTitle="End-to-End Care" seoDescription="ETOH Health's end-to-end care model — a complete lifecycle platform from pre-admission through post-discharge, ensuring continuity and coordination at every stage.">
             <style>{`
                 @keyframes connectionPulse {
                     0%   { text-shadow: 0 0 0px rgba(0,105,112,0); }

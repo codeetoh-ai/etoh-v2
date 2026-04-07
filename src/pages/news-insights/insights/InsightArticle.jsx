@@ -95,7 +95,7 @@ export default function InsightArticlePage() {
 
     if (loading) {
         return (
-            <PageLayout fullWidth title="" lightHero>
+            <PageLayout fullWidth title="" lightHero seoTitle="Loading Insight">
                 <style>{articleStyles}</style>
                 <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
@@ -110,7 +110,7 @@ export default function InsightArticlePage() {
 
     if (!insight) {
         return (
-            <PageLayout fullWidth title="" lightHero>
+            <PageLayout fullWidth title="" lightHero seoTitle="Insight Not Found">
                 <style>{articleStyles}</style>
                 <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24, padding: '48px 24px' }}>
                     <div style={{ width: 72, height: 72, background: '#E7F6F6', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -140,7 +140,7 @@ export default function InsightArticlePage() {
     const typeStyle = insightTypeColors[insight.insightType] || { bg: '#E7F6F6', color: '#006970' }
 
     return (
-        <PageLayout fullWidth title="" lightHero>
+        <PageLayout fullWidth title="" lightHero seoTitle={insight.title} seoDescription={insight.excerpt || insight.quote || `Read ${insight.title} on ETOH Health Insights.`}>
             <style>{articleStyles}</style>
 
             {/* ── Top Nav Bar ── */}

@@ -81,7 +81,7 @@ export default function NewsArticlePage() {
 
     if (loading) {
         return (
-            <PageLayout fullWidth title="" lightHero>
+            <PageLayout fullWidth title="" lightHero seoTitle="Loading Article">
                 <style>{articleStyles}</style>
                 <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
@@ -96,7 +96,7 @@ export default function NewsArticlePage() {
 
     if (!article) {
         return (
-            <PageLayout fullWidth title="" lightHero>
+            <PageLayout fullWidth title="" lightHero seoTitle="Article Not Found">
                 <style>{articleStyles}</style>
                 <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24, padding: '48px 24px' }}>
                     <div style={{ width: 72, height: 72, background: '#E7F6F6', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -125,7 +125,7 @@ export default function NewsArticlePage() {
     const heroImage = article.heroImage || null
 
     return (
-        <PageLayout fullWidth title="" lightHero>
+        <PageLayout fullWidth title="" lightHero seoTitle={article.title} seoDescription={article.excerpt || article.quote || `Read ${article.title} on ETOH Health News.`}>
             <style>{articleStyles}</style>
 
             {/* ── Top Nav Bar ── */}

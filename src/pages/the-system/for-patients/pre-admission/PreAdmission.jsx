@@ -299,7 +299,7 @@ export default function PreAdmissionPage() {
     }, [])
 
     return (
-        <PageLayout fullWidth={true} lightHero>
+        <PageLayout fullWidth={true} lightHero seoTitle="Pre-Admission" seoDescription="ETOH Health's digital pre-admission system — streamlined patient onboarding, medical history collection, and insurance verification before hospital arrival.">
             <style>{PA_KEYFRAMES}</style>
 
             {/* ── Section 1: Hero ── */}

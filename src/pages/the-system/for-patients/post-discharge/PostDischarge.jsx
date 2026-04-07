@@ -246,7 +246,7 @@ export default function PostDischargePage() {
     }, [])
 
     return (
-        <PageLayout fullWidth lightHero>
+        <PageLayout fullWidth lightHero seoTitle="Post-Discharge Care" seoDescription="ETOH Health's post-discharge system — automated follow-ups, recovery tracking, medication reminders, and seamless care continuity after leaving the hospital.">
             <style>{PD_KEYFRAMES}</style>
             <div style={{ background: 'white', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
 

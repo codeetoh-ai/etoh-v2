@@ -67,7 +67,7 @@ export default function HealthcareAccessPage() {
     }, [deployInView])
 
     return (
-        <PageLayout title="Healthcare Access" fullWidth={true}>
+        <PageLayout title="Healthcare Access" fullWidth={true} seoDescription="ETOH Health's impact on healthcare access — expanding quality care to underserved populations through scalable hospital infrastructure.">
             <style>{`
                 @keyframes glassSweep {
                     0%   { left: -70%; }
