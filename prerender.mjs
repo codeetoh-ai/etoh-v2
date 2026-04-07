@@ -127,8 +127,8 @@ async function prerender() {
             // Scroll through the page to trigger useInView / scroll-dependent content
             await page.evaluate(async () => {
                 await new Promise((resolve) => {
-                    const distance = 300
-                    const delay = 100
+                    const distance = 200
+                    const delay = 80
                     const timer = setInterval(() => {
                         window.scrollBy(0, distance)
                         if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
@@ -138,13 +138,22 @@ async function prerender() {
                             resolve()
                         }
                     }, delay)
-                    // Safety timeout: resolve after 10s max
-                    setTimeout(() => { clearInterval(timer); resolve() }, 10000)
+                    // Safety timeout: resolve after 15s max
+                    setTimeout(() => { clearInterval(timer); resolve() }, 15000)
                 })
             })
 
             // Wait for animations to complete and content to settle
-            await page.evaluate(() => new Promise(r => setTimeout(r, 2000)))
+            await page.evaluate(() => new Promise(r => setTimeout(r, 2500)))
+
+            // Force all framer-motion elements with opacity:0 to become visible
+            // so crawlers never see hidden content in the static HTML
+            await page.evaluate(() => {
+                document.querySelectorAll('[style*="opacity: 0"], [style*="opacity:0"]').forEach(el => {
+                    el.style.opacity = '1'
+                    el.style.transform = 'none'
+                })
+            })
 
             const html = await page.content()
 
