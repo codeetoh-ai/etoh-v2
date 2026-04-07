@@ -11,7 +11,15 @@ import { createServer } from 'http'
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
 import { join, extname } from 'path'
 import { fileURLToPath } from 'url'
+import puppeteerCore from 'puppeteer-core'
 import puppeteer from 'puppeteer'
+
+let chromiumModule
+try {
+    chromiumModule = await import('@sparticuz/chromium')
+} catch {
+    chromiumModule = null
+}
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const DIST = join(__dirname, 'dist')
@@ -109,10 +117,21 @@ async function prerender() {
     console.log('\n🚀 Starting prerender...')
     console.log(`  📄 ${ROUTES.length} routes to prerender\n`)
 
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    })
+    let browser
+    if (chromiumModule) {
+        const chromium = chromiumModule.default
+        browser = await puppeteerCore.launch({
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath(),
+            headless: true,
+        })
+    } else {
+        browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        })
+    }
 
     let success = 0
     let failed = 0

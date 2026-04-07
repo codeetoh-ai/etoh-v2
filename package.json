@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx puppeteer browsers install chrome && vite build && node prerender.mjs",
+    "build": "vite build && node prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@sparticuz/chromium": "^143.0.4",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -31,6 +32,7 @@
     "globals": "^17.4.0",
     "postcss": "^8.5.8",
     "puppeteer": "^24.40.0",
+    "puppeteer-core": "^24.40.0",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.1"
   }
