@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import SEO from './components/SEO'
+import CrawlableNav from './components/CrawlableNav'
 import videoSrc from './assets/Video/etoh d3.mp4'
 import { useResponsive } from './hooks/useResponsive'
 
@@ -199,6 +200,7 @@ export default function App() {
 
             {/* Sidebar */}
             <Sidebar open={open} onClose={() => setOpen(false)} />
+            <CrawlableNav />
         </div>
     )
 }

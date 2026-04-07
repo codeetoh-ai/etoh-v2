@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import SEO from './SEO'
+import CrawlableNav from './CrawlableNav'
 import { useResponsive } from '../hooks/useResponsive'
 
 export default function PageLayout({ title, children, fullWidth = false, lightHero = false, noPadBottom = false, seoTitle, seoDescription, seoPath }) {
@@ -90,6 +91,7 @@ export default function PageLayout({ title, children, fullWidth = false, lightHe
             </main>
 
             <Sidebar open={open} onClose={() => setOpen(false)} />
+            <CrawlableNav />
         </div>
     )
 }

@@ -14,7 +14,7 @@ export default function SEO({
 }) {
     const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Infrastructure for the Modern Hospital`
     const canonicalUrl = `${BASE_URL}${path}`
-    const ogImage = image || `${BASE_URL}/og-image.png`
+    const ogImage = image ? `${BASE_URL}${image}` : null
 
     return (
         <Helmet>
@@ -30,13 +30,13 @@ export default function SEO({
             <meta property="og:description" content={description} />
             <meta property="og:url" content={canonicalUrl} />
             <meta property="og:site_name" content={SITE_NAME} />
-            <meta property="og:image" content={ogImage} />
+            {ogImage && <meta property="og:image" content={ogImage} />}
 
             {/* Twitter */}
-            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
             <meta name="twitter:title" content={fullTitle} />
             <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={ogImage} />
+            {ogImage && <meta name="twitter:image" content={ogImage} />}
         </Helmet>
     )
 }
