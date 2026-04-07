@@ -92,7 +92,7 @@ export default function OurMissionPage() {
     const imageParallaxY = useTransform(imageScroll, [0, 1], ['-12%', '12%'])
 
     return (
-        <PageLayout title="Our Mission" fullWidth={true}>
+        <PageLayout title="Our Mission" fullWidth={true} seoDescription="ETOH Health's mission is to close the gap between clinical excellence and clinical reality by building the operational backbone of the modern hospital.">
 
             {/* ── Section 1: Hero ── */}
             <div

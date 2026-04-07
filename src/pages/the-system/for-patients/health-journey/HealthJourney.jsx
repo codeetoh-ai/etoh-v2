@@ -313,7 +313,7 @@ export default function HealthJourneyPage() {
     }, [chartVisible])
 
     return (
-        <PageLayout fullWidth lightHero>
+        <PageLayout fullWidth lightHero seoTitle="Health Journey" seoDescription="ETOH Health's patient health journey platform — continuous monitoring, milestone tracking, and personalized care pathways throughout the hospital stay.">
             <style>{KF}</style>
             <div style={{ background: 'white', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
                 <div className="hj-page-wrap">

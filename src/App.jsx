@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Sidebar from './components/Sidebar'
+import SEO from './components/SEO'
 import videoSrc from './assets/Video/etoh d3.mp4'
 import { useResponsive } from './hooks/useResponsive'
 
@@ -45,6 +46,11 @@ export default function App() {
 
     return (
         <div style={{ position: 'relative', width: '100vw', height: '100dvh', overflow: 'hidden', background: '#000' }}>
+            <SEO
+                title={null}
+                description="ETOH Health builds the operational infrastructure for modern hospitals — connecting clinicians, patients, and systems into a unified platform for end-to-end care."
+                path="/"
+            />
             <style>{`
                 video {
                     display: block;

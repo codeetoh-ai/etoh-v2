@@ -113,7 +113,7 @@ export default function ClinicalEvidencePage() {
     const min22 = useCounter(-22, studyVisible, 1200, 620)
 
     return (
-        <PageLayout fullWidth lightHero>
+        <PageLayout fullWidth lightHero seoTitle="Clinical Evidence" seoDescription="ETOH Health's clinical evidence base — peer-reviewed studies, validation data, and outcome metrics demonstrating the impact of unified hospital infrastructure.">
             <div style={{ background: 'white', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
                 <div style={{ width: '100%', paddingLeft: isMobile ? 20 : 32, paddingRight: isMobile ? 20 : 32, paddingTop: isMobile ? 48 : 80, paddingBottom: isMobile ? 48 : 80 }}>
                 <div style={{ maxWidth: 1216, marginLeft: 'auto', marginRight: 'auto' }}>

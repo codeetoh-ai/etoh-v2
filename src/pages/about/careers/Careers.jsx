@@ -91,7 +91,7 @@ export default function CareersPage() {
     const [ctaRef, ctaVisible]         = useInView()
 
     return (
-        <PageLayout title="Careers" fullWidth={true} lightHero>
+        <PageLayout title="Careers" fullWidth={true} lightHero seoDescription="Join ETOH Health — we're building the infrastructure of modern healthcare. Explore engineering, product, design, and clinical opportunities.">
 
             {/* ── Section 1: Hero ─────────────────────────────────────── */}
             <div style={{

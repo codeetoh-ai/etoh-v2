@@ -41,7 +41,7 @@ export default function ForCliniciansPage() {
     const confirmInView = useInView(confirmRef, { once: true, amount: 0.5 })
 
     return (
-        <PageLayout fullWidth={true}>
+        <PageLayout fullWidth={true} seoTitle="For Clinicians" seoDescription="ETOH Health's clinician platform — zero-latency patient records, AI-assisted triage tools, and intelligent clinical decision support at the point of care.">
             <style>{`
                 @keyframes accentPulse {
                     0%   { opacity: 1; }

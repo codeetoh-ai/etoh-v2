@@ -83,7 +83,7 @@ export default function PatientOutcomesPage() {
     }, [dataInView])
 
     return (
-        <PageLayout title="Patient Outcomes" fullWidth={true} lightHero>
+        <PageLayout title="Patient Outcomes" fullWidth={true} lightHero seoDescription="ETOH Health patient outcomes — real data on reduced readmissions, improved recovery timelines, and enhanced clinical outcomes through unified infrastructure.">
             <style>{`
                 @keyframes scanLine {
                     0%   { top: -10%; opacity: 0.18; }

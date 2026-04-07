@@ -135,7 +135,7 @@ export default function TechnologyPage() {
     const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
     return (
-        <PageLayout fullWidth lightHero>
+        <PageLayout fullWidth lightHero seoTitle="Technology" seoDescription="ETOH Health's technology stack — AI-powered clinical decision support, real-time data architecture, enterprise security, and APIs powering modern hospital operations.">
             <style>{`
                 @keyframes glassSweep {
                     0%   { left: -70%; }

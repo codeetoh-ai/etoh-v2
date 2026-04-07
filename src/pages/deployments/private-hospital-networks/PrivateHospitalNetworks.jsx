@@ -336,7 +336,7 @@ export default function PrivateHospitalNetworksPage() {
     }, [])
 
     return (
-        <PageLayout fullWidth={true}>
+        <PageLayout fullWidth={true} seoTitle="Private Hospital Networks" seoDescription="ETOH Health for private hospital networks — enterprise-grade infrastructure powering multi-site hospital operations with unified data and coordination.">
             <style>{PHN_KEYFRAMES}</style>
 
             {/* ── Hero Section ── */}

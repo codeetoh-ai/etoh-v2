@@ -142,14 +142,14 @@ export default function InsightsPage() {
 
     if (loading) {
         return (
-            <PageLayout fullWidth title="" lightHero noPadBottom>
+            <PageLayout fullWidth title="" lightHero noPadBottom seoTitle="Insights" seoDescription="Whitepapers, research briefs, and case studies from ETOH Health — system intelligence across a national healthcare network.">
                 <SkeletonLoading isMobile={isMobile} />
             </PageLayout>
         )
     }
 
     return (
-        <PageLayout fullWidth title="" lightHero noPadBottom>
+        <PageLayout fullWidth title="" lightHero noPadBottom seoTitle="Insights" seoDescription="Whitepapers, research briefs, and case studies from ETOH Health — system intelligence across a national healthcare network.">
             <style>{shimmerStyle}</style>
             <div style={{ fontFamily: "'Inter', sans-serif" }}>
 

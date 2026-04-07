@@ -1,0 +1,7 @@
+# ETOH Health - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+
+Sitemap: https://etoh.it.com/sitemap.xml

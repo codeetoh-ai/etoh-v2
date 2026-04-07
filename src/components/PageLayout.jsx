@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Sidebar from './Sidebar'
+import SEO from './SEO'
 import { useResponsive } from '../hooks/useResponsive'
 
-export default function PageLayout({ title, children, fullWidth = false, lightHero = false, noPadBottom = false }) {
+export default function PageLayout({ title, children, fullWidth = false, lightHero = false, noPadBottom = false, seoTitle, seoDescription, seoPath }) {
+    const location = useLocation()
     const [open, setOpen] = useState(false)
     const [isNavVisible, setIsNavVisible] = useState(true)
     const navigate = useNavigate()
@@ -28,6 +30,11 @@ export default function PageLayout({ title, children, fullWidth = false, lightHe
 
     return (
         <div className="relative min-h-screen bg-[#f5f2ed]" style={{ overflowX: 'hidden' }}>
+            <SEO
+                title={seoTitle || title}
+                description={seoDescription}
+                path={seoPath || location.pathname}
+            />
             {/* Top bar */}
             <header
                 className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between transition-transform duration-300 ease-in-out"
