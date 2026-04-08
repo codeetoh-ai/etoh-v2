@@ -5,3 +5,16 @@ Disallow: /admin
 Disallow: /admin/*
 
 Sitemap: https://etoh.it.com/sitemap.xml
+
+# AI Crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /

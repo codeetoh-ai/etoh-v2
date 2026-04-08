@@ -1,0 +1,57 @@
+# ETOH Health
+
+> ETOH Health builds the operational infrastructure for modern hospitals — connecting clinicians, patients, and systems into a unified platform for end-to-end care.
+
+## About
+
+ETOH Health is a healthcare technology company focused on building hospital operating systems. The platform connects clinicians, patients, and hospital systems into one unified infrastructure for end-to-end care delivery.
+
+- [Our Mission](https://etoh.it.com/about/our-mission): Why ETOH Health exists and what we aim to achieve in healthcare
+- [How We Work](https://etoh.it.com/about/how-we-work): Our approach to building healthcare infrastructure
+- [Team](https://etoh.it.com/about/team): The people behind ETOH Health
+- [Careers](https://etoh.it.com/about/careers): Open positions at ETOH Health
+
+## The System
+
+ETOH's core platform — a unified hospital operating system.
+
+- [The System Overview](https://etoh.it.com/the-system): Overview of the ETOH platform architecture
+- [Hospital Infrastructure](https://etoh.it.com/the-system/hospital-infrastructure): Backend systems that power hospital operations
+- [For Clinicians](https://etoh.it.com/the-system/for-clinicians): Tools and workflows designed for doctors and clinical staff
+- [Pre-Admission](https://etoh.it.com/the-system/for-patients/pre-admission): Patient journey before hospital admission
+- [Patient App](https://etoh.it.com/the-system/for-patients/patient-app): Mobile application for patients during care
+- [Health Journey](https://etoh.it.com/the-system/for-patients/health-journey): Tracking and managing the full patient health journey
+- [Post-Discharge](https://etoh.it.com/the-system/for-patients/post-discharge): Continued care and monitoring after discharge
+- [End-to-End Care](https://etoh.it.com/the-system/end-to-end-care): How all components connect for seamless care delivery
+
+## Deployments
+
+Where ETOH Health is deployed and operational.
+
+- [Deployments Overview](https://etoh.it.com/deployments): Overview of active deployments
+- [Government Health Systems](https://etoh.it.com/deployments/government-health-systems): Deployments in public/government hospital networks
+- [Private Hospital Networks](https://etoh.it.com/deployments/private-hospital-networks): Deployments in private healthcare systems
+
+## Research
+
+Evidence and technology behind ETOH Health.
+
+- [Research Overview](https://etoh.it.com/research): Our research initiatives
+- [Clinical Evidence](https://etoh.it.com/research/clinical-evidence): Published clinical evidence supporting the platform
+- [Technology](https://etoh.it.com/research/technology): Technical research and innovation
+- [Outcomes Index](https://etoh.it.com/research/outcomes-index): Measured health outcomes and indices
+
+## Impact
+
+The measurable impact of ETOH Health on healthcare.
+
+- [Impact Overview](https://etoh.it.com/impact): Summary of ETOH Health's impact
+- [Patient Outcomes](https://etoh.it.com/impact/patient-outcomes): Improvements in patient health outcomes
+- [Healthcare Access](https://etoh.it.com/impact/healthcare-access): Expanding access to quality healthcare
+- [Public Health Mission](https://etoh.it.com/impact/public-health-mission): Contribution to public health goals
+
+## News & Insights
+
+- [News & Insights](https://etoh.it.com/news-insights): Latest updates from ETOH Health
+- [News](https://etoh.it.com/news-insights/news): Company news and announcements
+- [Insights](https://etoh.it.com/news-insights/insights): Thought leadership and healthcare insights
