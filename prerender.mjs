@@ -137,17 +137,12 @@ async function prerender() {
     let failed = 0
     const failures = []
 
-    // Warmup: give the browser a moment to fully initialize
-    const warmup = await browser.newPage()
-    await warmup.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle0', timeout: 60000 })
-    await warmup.close()
-
     for (const route of ROUTES) {
         const page = await browser.newPage()
         const url = `http://localhost:${PORT}${route}`
 
         try {
-            await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 })
+            await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 })
 
             // Scroll through the page to trigger useInView / scroll-dependent content
             await page.evaluate(async () => {
