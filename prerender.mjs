@@ -161,9 +161,17 @@ async function prerender() {
             await page.evaluate(() => new Promise(r => setTimeout(r, 2000)))
 
             // Force ALL elements visible — override framer-motion opacity/transform
+            // BUT skip the sidebar and its backdrop so they stay hidden in prerendered HTML
             await page.evaluate(() => {
-                // 1. Override any inline opacity:0 or transform styles
+                const isSidebarEl = (el) =>
+                    el.hasAttribute('data-sidebar') ||
+                    el.hasAttribute('data-sidebar-backdrop') ||
+                    el.closest('[data-sidebar]') ||
+                    el.closest('[data-sidebar-backdrop]')
+
+                // 1. Override any inline opacity:0 or transform styles (skip sidebar)
                 document.querySelectorAll('*').forEach(el => {
+                    if (isSidebarEl(el)) return
                     const style = el.style
                     if (style.opacity === '0' || style.opacity === '0.0') {
                         style.opacity = '1'
@@ -179,12 +187,14 @@ async function prerender() {
                 })
 
                 // 3. Force computed hidden elements visible via a global style override
+                //    Exclude sidebar elements from the override
                 const overrideStyle = document.createElement('style')
                 overrideStyle.textContent = `
-                    [style*="opacity: 0"], [style*="opacity:0"] {
+                    [style*="opacity: 0"]:not([data-sidebar-backdrop]):not([data-sidebar] *),
+                    [style*="opacity:0"]:not([data-sidebar-backdrop]):not([data-sidebar] *) {
                         opacity: 1 !important;
                     }
-                    [style*="transform"] {
+                    [style*="transform"]:not([data-sidebar]):not([data-sidebar] *) {
                         transform: none !important;
                     }
                 `

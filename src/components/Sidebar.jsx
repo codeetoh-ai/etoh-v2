@@ -242,6 +242,7 @@ export default function Sidebar({ open, onClose }) {
         <>
             {/* Backdrop */}
             <div
+                data-sidebar-backdrop
                 onClick={() => { onClose(); setActiveIndex(null); setActiveSubIndex(null) }}
                 style={{
                     position: 'fixed',
@@ -257,6 +258,7 @@ export default function Sidebar({ open, onClose }) {
 
             {/* Sidebar */}
             <aside
+                data-sidebar
                 style={{
                     position: 'fixed',
                     top: 0,
