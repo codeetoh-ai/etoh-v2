@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Sidebar from './components/Sidebar'
 import SEO from './components/SEO'
 import CrawlableNav from './components/CrawlableNav'
@@ -16,22 +16,24 @@ export default function App() {
         return () => clearTimeout(t)
     }, [])
 
-    // Open sidebar on scroll
+    // Open sidebar on first scroll only
+    const scrollTriggered = useRef(false)
     useEffect(() => {
-        let triggered = false
+        if (scrollTriggered.current) return
+
         const handleWheel = (e) => {
-            if (triggered || open) return
+            if (scrollTriggered.current) return
             if (Math.abs(e.deltaY) > 15) {
-                triggered = true
+                scrollTriggered.current = true
                 setOpen(true)
             }
         }
         let touchStartY = 0
         const handleTouchStart = (e) => { touchStartY = e.touches[0].clientY }
         const handleTouchMove = (e) => {
-            if (triggered || open) return
+            if (scrollTriggered.current) return
             if (Math.abs(e.touches[0].clientY - touchStartY) > 30) {
-                triggered = true
+                scrollTriggered.current = true
                 setOpen(true)
             }
         }
@@ -43,7 +45,7 @@ export default function App() {
             window.removeEventListener('touchstart', handleTouchStart)
             window.removeEventListener('touchmove', handleTouchMove)
         }
-    }, [open])
+    }, [])
 
     return (
         <div style={{ position: 'relative', width: '100vw', height: '100dvh', overflow: 'hidden', background: '#000' }}>
