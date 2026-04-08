@@ -14,9 +14,9 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/((?!robots\\.txt|sitemap\\.xml|llms\\.txt|assets/).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
