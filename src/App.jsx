@@ -106,7 +106,6 @@ export default function App() {
                 ref={videoRef}
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 src={videoSrc}
-                autoPlay
                 loop
                 muted
                 playsInline
@@ -223,11 +222,7 @@ export default function App() {
                         © 2026 ETOH Health
                     </span>
                     <div style={{ display: 'flex', gap: isMobile ? 12 : 24, flexWrap: 'wrap' }}>
-                        {['Terms of Use', 'Privacy Policy'].map(item => (
-                            <a key={item} href="#" style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.3)', textDecoration: 'none', letterSpacing: '0.03em' }}>
-                                {item}
-                            </a>
-                        ))}
+                        {/* Links removed as per request */}
                     </div>
                 </div>
             </div>
