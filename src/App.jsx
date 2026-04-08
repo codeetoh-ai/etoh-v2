@@ -10,10 +10,39 @@ export default function App() {
     const [open, setOpen] = useState(false)
     const [mounted, setMounted] = useState(false)
     const { isMobile } = useResponsive()
+    const videoRef = useRef(null)
 
     useEffect(() => {
         const t = setTimeout(() => setMounted(true), 120)
         return () => clearTimeout(t)
+    }, [])
+
+    // Force autoplay on mobile — browsers sometimes ignore the autoplay attribute
+    useEffect(() => {
+        const vid = videoRef.current
+        if (!vid) return
+        vid.muted = true
+        vid.playsInline = true
+        vid.setAttribute('playsinline', '')
+        vid.setAttribute('webkit-playsinline', '')
+        const tryPlay = () => {
+            const p = vid.play()
+            if (p && p.catch) p.catch(() => {})
+        }
+        tryPlay()
+        vid.addEventListener('loadeddata', tryPlay)
+        const onInteraction = () => {
+            tryPlay()
+            document.removeEventListener('touchstart', onInteraction)
+            document.removeEventListener('click', onInteraction)
+        }
+        document.addEventListener('touchstart', onInteraction, { once: true, passive: true })
+        document.addEventListener('click', onInteraction, { once: true })
+        return () => {
+            vid.removeEventListener('loadeddata', tryPlay)
+            document.removeEventListener('touchstart', onInteraction)
+            document.removeEventListener('click', onInteraction)
+        }
     }, [])
 
     // Open sidebar on first scroll only
@@ -74,13 +103,16 @@ export default function App() {
 
             {/* Fullscreen video */}
             <video
+                ref={videoRef}
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 src={videoSrc}
                 autoPlay
                 loop
                 muted
                 playsInline
+                webkit-playsinline=""
                 controls={false}
+                preload="auto"
             />
 
             {/* Gradient overlay — heavy at bottom for legibility */}
