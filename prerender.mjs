@@ -142,37 +142,53 @@ async function prerender() {
         const url = `http://localhost:${PORT}${route}`
 
         try {
+            // Set a tall viewport so all whileInView elements trigger immediately
+            await page.setViewport({ width: 1280, height: 50000 })
+
             await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 })
 
-            // Scroll through the page to trigger useInView / scroll-dependent content
+            // Wait for React to render and animations to fire
+            await page.evaluate(() => new Promise(r => setTimeout(r, 3000)))
+
+            // Also scroll to trigger any remaining IntersectionObserver elements
             await page.evaluate(async () => {
-                await new Promise((resolve) => {
-                    const distance = 200
-                    const delay = 80
-                    const timer = setInterval(() => {
-                        window.scrollBy(0, distance)
-                        if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-                            clearInterval(timer)
-                            // Scroll back to top
-                            window.scrollTo(0, 0)
-                            resolve()
-                        }
-                    }, delay)
-                    // Safety timeout: resolve after 15s max
-                    setTimeout(() => { clearInterval(timer); resolve() }, 15000)
-                })
+                window.scrollTo(0, document.body.scrollHeight)
+                await new Promise(r => setTimeout(r, 1000))
+                window.scrollTo(0, 0)
             })
 
-            // Wait for animations to complete and content to settle
-            await page.evaluate(() => new Promise(r => setTimeout(r, 2500)))
+            // Wait for animations to complete
+            await page.evaluate(() => new Promise(r => setTimeout(r, 2000)))
 
-            // Force all framer-motion elements with opacity:0 to become visible
-            // so crawlers never see hidden content in the static HTML
+            // Force ALL elements visible — override framer-motion opacity/transform
             await page.evaluate(() => {
-                document.querySelectorAll('[style*="opacity: 0"], [style*="opacity:0"]').forEach(el => {
-                    el.style.opacity = '1'
-                    el.style.transform = 'none'
+                // 1. Override any inline opacity:0 or transform styles
+                document.querySelectorAll('*').forEach(el => {
+                    const style = el.style
+                    if (style.opacity === '0' || style.opacity === '0.0') {
+                        style.opacity = '1'
+                    }
+                    if (style.transform && style.transform !== 'none') {
+                        style.transform = 'none'
+                    }
                 })
+
+                // 2. Remove framer-motion data attributes that may re-hide on hydration
+                document.querySelectorAll('[data-framer-appear-id]').forEach(el => {
+                    el.removeAttribute('data-framer-appear-id')
+                })
+
+                // 3. Force computed hidden elements visible via a global style override
+                const overrideStyle = document.createElement('style')
+                overrideStyle.textContent = `
+                    [style*="opacity: 0"], [style*="opacity:0"] {
+                        opacity: 1 !important;
+                    }
+                    [style*="transform"] {
+                        transform: none !important;
+                    }
+                `
+                document.head.appendChild(overrideStyle)
             })
 
             const html = await page.content()
