@@ -2,7 +2,10 @@ import { useState, useEffect, useRef } from 'react'
 import Sidebar from './components/Sidebar'
 import SEO from './components/SEO'
 import CrawlableNav from './components/CrawlableNav'
-import videoSrc from './assets/Video/etoh d3.mp4'
+import desktopVideoSrc from './assets/Video/etoh d3.mp4'
+import mobileVideoSrc from './assets/etoh 9 16.mp4'
+import desktopPoster from './assets/Video/poster-desktop.jpg'
+import mobilePoster from './assets/poster-mobile.jpg'
 import { useResponsive } from './hooks/useResponsive'
 
 
@@ -12,12 +15,15 @@ export default function App() {
     const { isMobile } = useResponsive()
     const videoRef = useRef(null)
 
+    const videoSrc = isMobile ? mobileVideoSrc : desktopVideoSrc
+    const posterSrc = isMobile ? mobilePoster : desktopPoster
+
     useEffect(() => {
         const t = setTimeout(() => setMounted(true), 120)
         return () => clearTimeout(t)
     }, [])
 
-    // Force autoplay on mobile — browsers sometimes ignore the autoplay attribute
+    // Force autoplay — browsers sometimes ignore the autoplay attribute
     useEffect(() => {
         const vid = videoRef.current
         if (!vid) return
@@ -25,12 +31,18 @@ export default function App() {
         vid.playsInline = true
         vid.setAttribute('playsinline', '')
         vid.setAttribute('webkit-playsinline', '')
+
         const tryPlay = () => {
             const p = vid.play()
             if (p && p.catch) p.catch(() => {})
         }
-        tryPlay()
-        vid.addEventListener('loadeddata', tryPlay)
+
+        if (vid.readyState >= 3) {
+            tryPlay()
+        } else {
+            vid.addEventListener('canplay', tryPlay)
+        }
+
         const onInteraction = () => {
             tryPlay()
             document.removeEventListener('touchstart', onInteraction)
@@ -39,11 +51,11 @@ export default function App() {
         document.addEventListener('touchstart', onInteraction, { once: true, passive: true })
         document.addEventListener('click', onInteraction, { once: true })
         return () => {
-            vid.removeEventListener('loadeddata', tryPlay)
+            vid.removeEventListener('canplay', tryPlay)
             document.removeEventListener('touchstart', onInteraction)
             document.removeEventListener('click', onInteraction)
         }
-    }, [])
+    }, [videoSrc])
 
     // Open sidebar on first scroll only
     const scrollTriggered = useRef(false)
@@ -101,11 +113,15 @@ export default function App() {
                 }
             `}</style>
 
-            {/* Fullscreen video */}
+            {/* Fullscreen video — hidden until first frame is decoded */}
             <video
                 ref={videoRef}
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                style={{
+                    position: 'absolute', inset: 0, width: '100%', height: '100%',
+                    objectFit: 'cover', display: 'block',
+                }}
                 src={videoSrc}
+                poster={posterSrc}
                 loop
                 muted
                 playsInline
