@@ -15,8 +15,8 @@ const ease = [0.22, 1, 0.36, 1]
 const sharpEase = [0.25, 0.46, 0.45, 0.94]
 
 const heroLines = [
-    'The full picture of every patient.',
-    'In the pocket of every clinician.',
+    'The complete clinical picture of every patient,',
+    'at every point of care.',
 ]
 
 export default function ForCliniciansPage() {
@@ -232,10 +232,7 @@ export default function ForCliniciansPage() {
                                 fontWeight: 400,
                                 lineHeight: isMobile ? '26px' : '32.5px',
                             }}>
-                            Clinical decisions happen at the bedside, in the
-                            corridor, and between consultations. ETOH goes
-                            where the clinician goes — and it brings
-                            everything they need with it.
+                            Every clinician on ETOH has immediate access to the full record of every patient under their care — diagnostics, nursing observations, medication history, active clinical flags, and prior consultation notes, complete and current. For admitted patients, ETOH runs a continuous risk score tracking physiological trajectory. Deterioration is flagged before it becomes a clinical emergency, and the clinical team has a forward-looking picture of each patient's direction at all times. A digital senior resident reviews patient records continuously, surfacing patterns and observations that warrant clinical attention. For outpatient consultations, the patient's history, current medications, and active risk areas are organised and ready before the encounter begins. Before any prescription is finalised, ETOH cross-checks it against the patient's full medication profile for drug interactions and contraindications. When a clinical decision is made — an investigation ordered, a treatment changed, a referral initiated — it flows immediately into the hospital's operating layer, notifying the relevant team and triggering the next step in the care workflow.
                         </motion.div>
 
                         {/* Buttons */}

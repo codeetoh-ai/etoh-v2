@@ -34,7 +34,7 @@ export default function App() {
 
         const tryPlay = () => {
             const p = vid.play()
-            if (p && p.catch) p.catch(() => {})
+            if (p && p.catch) p.catch(() => { })
         }
 
         if (vid.readyState >= 3) {
@@ -194,7 +194,7 @@ export default function App() {
                             lineHeight: 1.05,
                             letterSpacing: '0.04em',
                             textTransform: 'uppercase',
-                            background: 'linear-gradient(135deg, #c9a84c 0%, #f0d78a 25%, #b8922a 50%, #e8c96a 75%, #c9a84c 100%)',
+                            background: 'linear-gradient(135deg, #0f9b0f 0%, #a1c4fd 50%, #fbc2eb 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',

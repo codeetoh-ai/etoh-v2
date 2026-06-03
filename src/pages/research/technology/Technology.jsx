@@ -112,10 +112,10 @@ function TypewriterQuote({ active, isMobile }) {
 
 function ResourceIcon({ type }) {
     const icons = {
-        doc: <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M10 1H3C1.9 1 1 1.9 1 3V17C1 18.1 1.9 19 3 19H13C14.1 19 15 18.1 15 17V6L10 1Z" stroke="#001736" strokeWidth="1.5" strokeLinejoin="round"/><path d="M10 1V6H15" stroke="#001736" strokeWidth="1.5" strokeLinejoin="round"/></svg>,
-        chart: <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="8" width="4" height="9" rx="1" stroke="#001736" strokeWidth="1.5"/><rect x="7" y="1" width="4" height="16" rx="1" stroke="#001736" strokeWidth="1.5"/><rect x="13" y="5" width="4" height="12" rx="1" stroke="#001736" strokeWidth="1.5"/></svg>,
-        api: <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" stroke="#001736" strokeWidth="1.5"/><path d="M7 11H15M11 7V15" stroke="#001736" strokeWidth="1.5" strokeLinecap="round"/></svg>,
-        shield: <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M8 1L1 4.5V9.5C1 14.2 3.87 18.55 8 19.5C12.13 18.55 15 14.2 15 9.5V4.5L8 1Z" stroke="#001736" strokeWidth="1.5" strokeLinejoin="round"/></svg>,
+        doc: <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M10 1H3C1.9 1 1 1.9 1 3V17C1 18.1 1.9 19 3 19H13C14.1 19 15 18.1 15 17V6L10 1Z" stroke="#001736" strokeWidth="1.5" strokeLinejoin="round" /><path d="M10 1V6H15" stroke="#001736" strokeWidth="1.5" strokeLinejoin="round" /></svg>,
+        chart: <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="8" width="4" height="9" rx="1" stroke="#001736" strokeWidth="1.5" /><rect x="7" y="1" width="4" height="16" rx="1" stroke="#001736" strokeWidth="1.5" /><rect x="13" y="5" width="4" height="12" rx="1" stroke="#001736" strokeWidth="1.5" /></svg>,
+        api: <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" stroke="#001736" strokeWidth="1.5" /><path d="M7 11H15M11 7V15" stroke="#001736" strokeWidth="1.5" strokeLinecap="round" /></svg>,
+        shield: <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M8 1L1 4.5V9.5C1 14.2 3.87 18.55 8 19.5C12.13 18.55 15 14.2 15 9.5V4.5L8 1Z" stroke="#001736" strokeWidth="1.5" strokeLinejoin="round" /></svg>,
     }
     return icons[type] || icons.doc
 }
@@ -231,9 +231,9 @@ export default function TechnologyPage() {
                                 transition={{ duration: 0.7, ease: ease, delay: 0.1 }}
                                 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: isMobile ? 36 : 72, lineHeight: isMobile ? '42px' : '72px', margin: 0 }}
                             >
-                                <span style={{ color: '#001736' }}>The architecture behind the system.</span>
+                                <span style={{ color: '#001736' }}>The architecture behind the system,</span>
                                 <br />
-                                <span style={{ color: '#006970' }}>Transparent by design.</span>
+                                <span style={{ color: '#006970' }}>open to scrutiny.</span>
                             </motion.h1>
 
                             <motion.p
@@ -242,7 +242,7 @@ export default function TechnologyPage() {
                                 transition={{ duration: 0.6, ease: ease, delay: 0.25 }}
                                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: isMobile ? 16 : 20, lineHeight: isMobile ? '26px' : '28px', color: '#43474F', maxWidth: 576, margin: 0, paddingTop: 8 }}
                             >
-                                ETOH publishes technical documentation for clinical AI researchers, health informaticists, and hospital technology leadership who want to understand not just what the platform does, but how it works.
+                                ETOH publishes technical documentation for clinical AI researchers, health informaticists, and hospital technology teams who want to understand how the platform works — the model architecture, the conditions under which AI components have and have not been validated, and the boundaries of current capability. Transparency about methodology is the minimum standard of intellectual honesty for a platform operating in clinical environments.
                             </motion.p>
                         </div>
 

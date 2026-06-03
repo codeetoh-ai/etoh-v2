@@ -36,10 +36,9 @@ function useCounter(target, active, duration = 1100, decimals = 0) {
 }
 
 const heroLines = [
-    'Reaching the patients',
-    'who have the most to',
-    'gain and the fewest',
-    'alternatives.',
+    'Facilities reached.',
+    'Patient volumes supported',
+    'Care gaps closed.',
 ]
 
 export default function HealthcareAccessPage() {
@@ -48,15 +47,15 @@ export default function HealthcareAccessPage() {
     const px = isMobile ? 16 : 32
 
     const narrativeRef = useRef(null)
-    const deployRef    = useRef(null)
+    const deployRef = useRef(null)
 
     const narrativeInView = useInView(narrativeRef, { once: true, amount: 0.15 })
-    const deployInView    = useInView(deployRef,    { once: true, amount: 0.08 })
+    const deployInView = useInView(deployRef, { once: true, amount: 0.08 })
 
     // Counters
     const facilitiesCount = useCounter(240, deployInView, 1200, 0)
-    const careGapsCount   = useCounter(68,  deployInView, 1000, 0)
-    const communityCount  = useCounter(42,  deployInView, 1000, 0)
+    const careGapsCount = useCounter(68, deployInView, 1000, 0)
+    const communityCount = useCounter(42, deployInView, 1000, 0)
 
     // Coverage fill
     const [coverageActive, setCoverageActive] = useState(false)
@@ -175,7 +174,7 @@ export default function HealthcareAccessPage() {
                                 transition={{ duration: 0.65, ease, delay: 0.58 }}
                                 style={{ color: '#7594CA', fontSize: isMobile ? 16 : 24, fontFamily: 'Inter', fontWeight: 300, lineHeight: '32px' }}
                             >
-                                Access is measured in facilities reached, patient volumes, and care gaps closed—especially in under-resourced communities where precision matters most.
+                                ETOH's access impact is measured in facilities made operational, patient volumes supported, and care gaps closed in the communities where those gaps were largest and most entrenched. Clinical teams in under-resourced settings operating with the same visibility as the best-equipped hospitals in the country — that is what the access numbers reflect.
                             </motion.div>
                         </div>
                     </div>
@@ -193,7 +192,7 @@ export default function HealthcareAccessPage() {
                             style={{ paddingLeft: 32, paddingRight: 32, paddingTop: 20, paddingBottom: 20, background: '#006970', borderRadius: 6, boxShadow: '0px 8px 10px -6px rgba(0,0,0,0.10), 0px 20px 25px -5px rgba(0,0,0,0.10)', display: 'inline-flex', alignItems: 'center', gap: 16, cursor: 'pointer' }}
                         >
                             <div style={{ color: 'white', fontSize: 16, fontFamily: 'Inter', fontWeight: 700, lineHeight: '24px' }}>View Full Access Report</div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="white"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="white" /></svg>
                         </div>
                     </motion.div>
                 </div>
@@ -238,7 +237,7 @@ export default function HealthcareAccessPage() {
                                 transition={{ duration: 0.7, ease, delay: 0.35 }}
                                 style={{ color: '#001736', fontSize: isMobile ? 32 : 48, fontFamily: 'Manrope', fontWeight: 700, lineHeight: isMobile ? '36px' : '48px' }}
                             >
-                                Operational visibility as a clinical right.
+                                Closing care gaps across the network.
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0 }}
@@ -247,10 +246,10 @@ export default function HealthcareAccessPage() {
                                 style={{ display: 'flex', flexDirection: 'column', gap: 24 }}
                             >
                                 <div style={{ color: '#43474F', fontSize: 18, fontFamily: 'Inter', fontWeight: 400, lineHeight: '29.25px' }}>
-                                    For the first time, public health facilities are operating with genuinely capable infrastructure. We are bridging the divide between resource-constrained environments and high-precision clinical excellence.
+                                    By linking these facilities into a single operational network, we ensure that a patient in a rural district receives care guided by the same clinical protocols and specialist visibility as a patient in a metropolitan hub.
                                 </div>
                                 <div style={{ color: '#43474F', fontSize: 18, fontFamily: 'Inter', fontWeight: 400, lineHeight: '29.25px' }}>
-                                    By deploying institutional-grade systems into the heart of community medicine, we give clinical teams in these settings the same operational visibility and diagnostic speed as the world&apos;s best-equipped private hospitals.
+                                    Our infrastructure allows health systems to distribute their clinical expertise effectively, closing care gaps and building capacity where it is needed most.
                                 </div>
                             </motion.div>
                         </div>
@@ -273,7 +272,7 @@ export default function HealthcareAccessPage() {
                                     style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: '#006970', transformOrigin: 'bottom' }}
                                 />
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 15.11 16.1 17.78 12 18.93V12H5V6.3L12 3.19V11.99Z" fill="#006970"/>
+                                    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 15.11 16.1 17.78 12 18.93V12H5V6.3L12 3.19V11.99Z" fill="#006970" />
                                 </svg>
                                 <div style={{ color: '#001736', fontSize: 14, fontFamily: 'Inter', fontWeight: 600, textTransform: 'uppercase', lineHeight: '20px', letterSpacing: 1.4 }}>Genuinely Capable Infrastructure</div>
                             </div>
@@ -321,7 +320,7 @@ export default function HealthcareAccessPage() {
                                     style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: '#006970', transformOrigin: 'bottom' }}
                                 />
                                 <svg width="25" height="23" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#006970"/>
+                                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#006970" />
                                 </svg>
                                 {/* metric-count */}
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -378,7 +377,7 @@ export default function HealthcareAccessPage() {
                                 style={{ padding: 40, background: '#001736', boxShadow: '0px 1px 2px rgba(0,0,0,0.05)', borderRadius: 8, display: 'flex', flexDirection: 'column', gap: 20 }}
                             >
                                 <svg width="28" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16 11C17.66 11 18.99 9.66 18.99 8C18.99 6.34 17.66 5 16 5C14.34 5 13 6.34 13 8C13 9.66 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8C10.99 6.34 9.66 5 8 5C6.34 5 5 6.34 5 8C5 9.66 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" fill="#7AD5DD"/>
+                                    <path d="M16 11C17.66 11 18.99 9.66 18.99 8C18.99 6.34 17.66 5 16 5C14.34 5 13 6.34 13 8C13 9.66 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8C10.99 6.34 9.66 5 8 5C6.34 5 5 6.34 5 8C5 9.66 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" fill="#7AD5DD" />
                                 </svg>
                                 {/* reach-count */}
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -401,7 +400,7 @@ export default function HealthcareAccessPage() {
                                         }} />
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M0 8L6 0L12 8H0Z" fill="#7AD5DD"/></svg>
+                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M0 8L6 0L12 8H0Z" fill="#7AD5DD" /></svg>
                                         <div style={{ color: '#7AD5DD', fontSize: 12, fontFamily: 'Inter', fontWeight: 700, textTransform: 'uppercase', lineHeight: '16px', letterSpacing: 1.2 }}>12% Year-over-year increase</div>
                                     </div>
                                 </div>

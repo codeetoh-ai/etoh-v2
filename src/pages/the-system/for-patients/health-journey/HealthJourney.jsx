@@ -323,10 +323,7 @@ export default function HealthJourneyPage() {
                         <div style={{ maxWidth: 800 }}>
                             <h1 className="hj-hero-heading">
                                 <div style={{ animation: a('hj-perspective-reveal', '0.75s', 0) }}>
-                                    See your health,
-                                </div>
-                                <div style={{ animation: a('hj-perspective-reveal', '0.8s', 160, 'cubic-bezier(0.25,0.46,0.45,0.94)') }}>
-                                    not just your diagnosis.
+                                    A longitudinal picture of your health, built across every clinical interaction.
                                 </div>
                             </h1>
                             <p style={{
@@ -339,9 +336,7 @@ export default function HealthJourneyPage() {
                                 margin: 0,
                                 animation: a('hj-fade-up', '0.65s', 380),
                             }}>
-                                ETOH builds a living picture of each patient's health trajectory — so
-                                that care decisions are grounded not just in what is happening now,
-                                but in where each patient is headed.
+                                ETOH builds a longitudinal health record for each patient across every episode of care — consultations, admissions, diagnostics, medications, nursing observations, and home monitoring. This record grows with each clinical interaction and is the foundation for personalised health intelligence. We are building the patient digital twin on this foundation: a continuously updated model of each patient's health trajectory that will support earlier clinical intervention and more precise care decisions. Through our hospital deployments, we are building a dataset of millions of patient health records spanning India's full demographic and geographic range — longitudinal, multi-modal, and structured for the model training that patient-specific prediction requires. The models that will run on this dataset are under active development.
                             </p>
                         </div>
 

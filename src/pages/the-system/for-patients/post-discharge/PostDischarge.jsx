@@ -219,19 +219,19 @@ const roadmapSteps = [
    Component
 ───────────────────────────────────────────── */
 export default function PostDischargePage() {
-    const monitorRef  = useRef(null)
-    const appRef      = useRef(null)
-    const roadmapRef  = useRef(null)
+    const monitorRef = useRef(null)
+    const appRef = useRef(null)
+    const roadmapRef = useRef(null)
 
-    const [monitorVisible,  setMonitorVisible]  = useState(false)
-    const [appVisible,      setAppVisible]      = useState(false)
-    const [roadmapVisible,  setRoadmapVisible]  = useState(false)
+    const [monitorVisible, setMonitorVisible] = useState(false)
+    const [appVisible, setAppVisible] = useState(false)
+    const [roadmapVisible, setRoadmapVisible] = useState(false)
 
     useEffect(() => {
         const pairs = [
-            [monitorRef,  setMonitorVisible],
-            [appRef,      setAppVisible],
-            [roadmapRef,  setRoadmapVisible],
+            [monitorRef, setMonitorVisible],
+            [appRef, setAppVisible],
+            [roadmapRef, setRoadmapVisible],
         ]
         const observers = pairs.map(([ref, setter]) => {
             if (!ref.current) return null
@@ -278,7 +278,7 @@ export default function PostDischargePage() {
                                 margin: 0,
                             }}>
                                 <div style={{ animation: anim('pd-continuity-reveal', '1.0s', 100), overflow: 'hidden' }}>
-                                    Discharge is not
+                                    Discharge is a transition.
                                 </div>
                                 <div style={{
                                     animation: anim('pd-continuity-reveal', '1.0s', 190),
@@ -288,14 +288,8 @@ export default function PostDischargePage() {
                                         display: 'inline-block',
                                         animation: anim('pd-meaning-emphasis', '1.6s', 1250, 'ease-in-out'),
                                     }}>
-                                        the end of care.
+                                        The care continues.
                                     </span>
-                                </div>
-                                <div style={{ animation: anim('pd-continuity-reveal', '1.0s', 280), overflow: 'hidden' }}>
-                                    ETOH does not
-                                </div>
-                                <div style={{ animation: anim('pd-continuity-reveal', '1.0s', 370), overflow: 'hidden' }}>
-                                    treat it as one.
                                 </div>
                             </h1>
 
@@ -311,7 +305,7 @@ export default function PostDischargePage() {
                                 paddingTop: 8,
                                 animation: anim('pd-soft-fade-up', '0.9s', 520),
                             }}>
-                                The moment a patient leaves the hospital is when the care most hospitals provide ends. For ETOH, it is simply where one phase ends and another begins.
+                                Patients leaving a facility carry their care forward through the ETOH app — with recovery guidance, medication management, follow-up scheduling, and home monitoring specific to their clinical situation. The treating team retains visibility into recovery and is alerted when something changes. Pharmacy needs, pathology follow-up, and specialist review are managed through the same platform the patient has used throughout their episode. The care journey from first contact to full recovery is one unbroken record.
                             </p>
                         </div>
 

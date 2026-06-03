@@ -193,7 +193,7 @@ export default function CareersPage() {
                             lineHeight: isMobile ? '28px' : '32px',
                             wordWrap: 'break-word',
                         }}>
-                            We are building the infrastructure layer of modern healthcare. If that is the kind of problem that gets you out of bed in the morning, reach out.
+                            We are building the operating infrastructure of modern healthcare. If that is the problem you want to work on, reach out.
                         </div>
                     </div>
 

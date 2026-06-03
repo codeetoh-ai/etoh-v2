@@ -88,7 +88,7 @@ const anim = (name, duration, delayMs, easing = EASE) =>
 
 const ClinicalRegisterIcon = () => (
     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 22.5C4.3125 22.5 3.72396 22.2552 3.23438 21.7656C2.74479 21.276 2.5 20.6875 2.5 20V5C2.5 4.3125 2.74479 3.72396 3.23438 3.23438C3.72396 2.74479 4.3125 2.5 5 2.5H9.375C9.58333 1.875 9.96354 1.36458 10.5156 0.96875C11.0677 0.572917 11.7 0.375 12.4125 0.375C13.125 0.375 13.7656 0.572917 14.3344 0.96875C14.9031 1.36458 15.2917 1.875 15.5 2.5H20C20.6875 2.5 21.276 2.74479 21.7656 3.23438C22.2552 3.72396 22.5 4.3125 22.5 5V20C22.5 20.6875 22.2552 21.276 21.7656 21.7656C21.276 22.2552 20.6875 22.5 20 22.5H5ZM5 20H20V5H5V20ZM7.5 17.5H15V15H7.5V17.5ZM7.5 13.75H17.5V11.25H7.5V13.75ZM7.5 10H17.5V7.5H7.5V10ZM12.5 3.4375C12.7604 3.4375 12.9792 3.34896 13.1562 3.17188C13.3333 2.99479 13.4219 2.77604 13.4219 2.51562C13.4219 2.25521 13.3333 2.03646 13.1562 1.85938C12.9792 1.68229 12.7604 1.59375 12.5 1.59375C12.2396 1.59375 12.0208 1.68229 11.8438 1.85938C11.6667 2.03646 11.5781 2.25521 11.5781 2.51562C11.5781 2.77604 11.6667 2.99479 11.8438 3.17188C12.0208 3.34896 12.2396 3.4375 12.5 3.4375Z" fill="#006970"/>
+        <path d="M5 22.5C4.3125 22.5 3.72396 22.2552 3.23438 21.7656C2.74479 21.276 2.5 20.6875 2.5 20V5C2.5 4.3125 2.74479 3.72396 3.23438 3.23438C3.72396 2.74479 4.3125 2.5 5 2.5H9.375C9.58333 1.875 9.96354 1.36458 10.5156 0.96875C11.0677 0.572917 11.7 0.375 12.4125 0.375C13.125 0.375 13.7656 0.572917 14.3344 0.96875C14.9031 1.36458 15.2917 1.875 15.5 2.5H20C20.6875 2.5 21.276 2.74479 21.7656 3.23438C22.2552 3.72396 22.5 4.3125 22.5 5V20C22.5 20.6875 22.2552 21.276 21.7656 21.7656C21.276 22.2552 20.6875 22.5 20 22.5H5ZM5 20H20V5H5V20ZM7.5 17.5H15V15H7.5V17.5ZM7.5 13.75H17.5V11.25H7.5V13.75ZM7.5 10H17.5V7.5H7.5V10ZM12.5 3.4375C12.7604 3.4375 12.9792 3.34896 13.1562 3.17188C13.3333 2.99479 13.4219 2.77604 13.4219 2.51562C13.4219 2.25521 13.3333 2.03646 13.1562 1.85938C12.9792 1.68229 12.7604 1.59375 12.5 1.59375C12.2396 1.59375 12.0208 1.68229 11.8438 1.85938C11.6667 2.03646 11.5781 2.25521 11.5781 2.51562C11.5781 2.77604 11.6667 2.99479 11.8438 3.17188C12.0208 3.34896 12.2396 3.4375 12.5 3.4375Z" fill="#006970" />
     </svg>
 )
 
@@ -195,17 +195,14 @@ export default function GovernmentHealthSystemsPage() {
                         wordWrap: 'break-word',
                     }}>
                         <div style={{ color: 'white', animation: anim('ghs-line-1', '1.0s', 120) }}>
-                            Where healthcare access
+                            Capable operating infrastructure,
                         </div>
                         <div style={{ color: 'white', animation: anim('ghs-line-2', '1.0s', 220) }}>
-                            matters most, the operating
+                            built for the facilities that
                         </div>
-                        <div style={{ color: 'white', animation: anim('ghs-line-3', '1.0s', 320) }}>
-                            infrastructure has always
-                        </div>
-                        <div style={{ animation: anim('ghs-line-4', '1.0s', 440) }}>
-                            <span style={{ color: 'white' }}>been weakest. </span>
-                            <span style={{ color: '#7594CA' }}>We are changing that.</span>
+                        <div style={{ animation: anim('ghs-line-3', '1.0s', 320) }}>
+                            <span style={{ color: 'white' }}>carry the highest </span>
+                            <span style={{ color: '#7594CA' }}>patient load.</span>
                         </div>
                     </div>
 
@@ -219,7 +216,7 @@ export default function GovernmentHealthSystemsPage() {
                             lineHeight: isMobile ? '28px' : '32px',
                             wordWrap: 'break-word',
                         }}>
-                            Public health facilities serve the patients with the fewest alternatives. ETOH&apos;s commitment to government health systems is built on that fact and does not apologize for it.
+                            Public health facilities — district hospitals, sub-district centres, last-mile care points — serve patient volumes that would strain the best-equipped private institutions, and do so with a fraction of the administrative and operational support. The clinical teams in these facilities are skilled. What they work without is an operating infrastructure commensurate with that skill. ETOH deploys into public health settings configured for their specific operational context — the patient mix, the resource constraints, the workflows that exist and the gaps within them. Deployments are supported with full training across clinical and administrative staff and with sustained operational presence long after the platform goes live. These are long-term institutional partnerships with the facilities and the communities they serve.
                         </div>
                     </div>
                 </div>

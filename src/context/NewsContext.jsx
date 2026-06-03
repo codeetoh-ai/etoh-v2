@@ -13,16 +13,18 @@ export function NewsProvider({ children }) {
     }, [])
 
     const fetchArticles = async () => {
-        try {
-            setLoading(true)
-            const { data } = await axios.get(`${API_BASE_URL}/api/news`)
-            setArticles(data)
-        } catch {
-            console.warn('Could not fetch articles from API')
-        } finally {
-            setLoading(false)
-        }
+    try {
+        setLoading(true)
+        const { data } = await axios.get(`${API_BASE_URL}/api/news`)
+        // Ensure articles is always an array
+        const articlesArray = Array.isArray(data) ? data : (data?.articles ?? [])
+        setArticles(articlesArray)
+    } catch {
+        console.warn('Could not fetch articles from API')
+    } finally {
+        setLoading(false)
     }
+}
 
     const addArticle = useCallback(async (article) => {
         const token = localStorage.getItem('adminToken')
@@ -50,9 +52,9 @@ export function NewsProvider({ children }) {
         setArticles((prev) => prev.filter((a) => a.slug !== slug))
     }, [])
 
-    const getBySlug = useCallback((slug) => {
-        return articles.find((a) => a.slug === slug)
-    }, [articles])
+        const getBySlug = useCallback((slug) => {
+            return Array.isArray(articles) ? articles.find((a) => a.slug === slug) : undefined;
+        }, [articles])
 
     const getRelated = useCallback((slugs) => {
         return slugs.map((s) => articles.find((a) => a.slug === s)).filter(Boolean)

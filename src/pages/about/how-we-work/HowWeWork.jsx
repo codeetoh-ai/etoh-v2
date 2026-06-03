@@ -83,7 +83,7 @@ export default function HowWeWorkPage() {
                                 transition={{ duration: 0.7, ease, delay: 0.1 }}
                                 style={{ display: 'block', color: '#001736', fontSize, fontFamily: 'Manrope', fontWeight: 800, lineHeight }}
                             >
-                                A platform in
+                                One platform.
                             </motion.span>
 
                             {/* Line 2: slides from left — gradient-shift on teal words */}
@@ -94,7 +94,7 @@ export default function HowWeWorkPage() {
                                 className="teal-gradient-text"
                                 style={{ display: 'block', fontSize, fontFamily: 'Manrope', fontWeight: 800, lineHeight }}
                             >
-                                three dimensions.
+                                Four groups.
                             </motion.span>
 
                             {/* Line 3: slides from right */}
@@ -104,7 +104,7 @@ export default function HowWeWorkPage() {
                                 transition={{ duration: 0.7, ease, delay: 0.4 }}
                                 style={{ display: 'block', color: '#001736', fontSize, fontFamily: 'Manrope', fontWeight: 800, lineHeight }}
                             >
-                                One system in practice.
+                                Every layer of care connected.
                             </motion.span>
                         </div>
 
@@ -116,7 +116,7 @@ export default function HowWeWorkPage() {
                             style={{ maxWidth: 672, paddingTop: 8 }}
                         >
                             <div style={{ color: '#43474F', fontSize: isMobile ? 16 : 20, fontFamily: 'Inter', fontWeight: 400, lineHeight: isMobile ? '26px' : '32.5px', wordWrap: 'break-word' }}>
-                                These layers are not three products. They are one platform, built around a shared clinical record that is live, complete, and accessible to every part of the care team at once.
+                                ETOH is a single clinical operating system organised into four suites — for the patient, the doctor, the nurse, and the hospital institution. Each suite is built around how that group actually works. All four run on one shared clinical record that is live and visible across the entire care team. A decision made by a doctor updates immediately in the nurse's workflow. A patient's vitals recorded at home are visible to the treating team. A ward approaching capacity surfaces in the hospital dashboard before it creates a problem. The four suites are four access points into the same system.
                             </div>
                         </motion.div>
                     </div>

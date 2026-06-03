@@ -346,7 +346,10 @@ export default function PreAdmissionPage() {
                         {/* Heading — line-by-line reveal */}
                         <div className="pa-hero-heading">
                             <div style={{ animation: anim('pa-anticipation-reveal', '0.7s', 100) }}>
-                                Care begins{' '}
+                                The hospital knows
+                            </div>
+                            <div style={{ animation: anim('pa-anticipation-reveal', '0.7s', 180) }}>
+                                the patient{' '}
                                 <span style={{
                                     color: '#006970',
                                     display: 'inline-block',
@@ -355,11 +358,8 @@ export default function PreAdmissionPage() {
                                     before
                                 </span>
                             </div>
-                            <div style={{ animation: anim('pa-anticipation-reveal', '0.7s', 180) }}>
-                                the patient walks
-                            </div>
                             <div style={{ animation: anim('pa-anticipation-reveal', '0.7s', 260) }}>
-                                through the door.
+                                they arrive.
                             </div>
                         </div>
 
@@ -371,9 +371,7 @@ export default function PreAdmissionPage() {
                                 animation: anim('pa-soft-fade-up', '0.65s', 400),
                             }}
                         >
-                            The hospital visit is one moment in a longer health journey. ETOH
-                            connects to that journey from the beginning, ensuring every detail is
-                            captured before arrival.
+                            Before arrival, patients share relevant health history, prior investigations, and existing conditions through the ETOH patient app. Appointment scheduling, pre-procedure guidance, and intake documentation are completed digitally ahead of time. The care team is prepared from the moment the patient walks in. For patients returning for follow-up or managing chronic conditions, the clinical picture built across previous episodes carries forward automatically into every subsequent encounter.
                         </p>
 
                         {/* CTA Buttons */}

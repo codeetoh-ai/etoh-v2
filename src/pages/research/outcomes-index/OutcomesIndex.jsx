@@ -100,31 +100,29 @@ function AnimatedBar({ label, value, width, active, delay }) {
 }
 
 const heroLines = [
-    'We built a framework for',
-    'how hospital operating',
-    'systems should be',
-    'evaluated. Then we',
-    'applied it to ourselves.',
+    'A framework for measuring what',
+    'hospital operating systems must',
+    'be held to — applied to ourselves first.',
 ]
 
 const frameworkCards = [
     {
-        icon: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#006970"/></svg>,
+        icon: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#006970" /></svg>,
         title: 'Patient Outcomes',
         body: 'Measuring the velocity of recovery and the reduction of post-acute complications through algorithmic intervention.',
     },
     {
-        icon: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z" fill="#006970"/></svg>,
+        icon: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z" fill="#006970" /></svg>,
         title: 'Care Quality',
         body: 'Objective scoring of adherence to clinical protocols and the minimization of administrative friction for providers.',
     },
     {
-        icon: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM4 12C4 7.59 7.59 4 12 4C13.57 4 15.04 4.46 16.28 5.25L5.25 16.28C4.46 15.04 4 13.57 4 12ZM12 20C10.43 20 8.96 19.54 7.72 18.75L18.75 7.72C19.54 8.96 20 10.43 20 12C20 16.41 16.41 20 12 20Z" fill="#006970"/></svg>,
+        icon: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM4 12C4 7.59 7.59 4 12 4C13.57 4 15.04 4.46 16.28 5.25L5.25 16.28C4.46 15.04 4 13.57 4 12ZM12 20C10.43 20 8.96 19.54 7.72 18.75L18.75 7.72C19.54 8.96 20 10.43 20 12C20 16.41 16.41 20 12 20Z" fill="#006970" /></svg>,
         title: 'Access Reach',
         body: 'Evaluating the democratization of specialist knowledge and the equity of care delivery across diverse patient cohorts.',
     },
     {
-        icon: <svg width="30" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 18.49L9.5 12.48L13.5 16.48L22 6.92L20.59 5.51L13.5 13.48L9.5 9.48L2 17L3.5 18.49Z" fill="#006970"/></svg>,
+        icon: <svg width="30" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 18.49L9.5 12.48L13.5 16.48L22 6.92L20.59 5.51L13.5 13.48L9.5 9.48L2 17L3.5 18.49Z" fill="#006970" /></svg>,
         title: 'Clinical Error Reduction',
         body: 'Quantifying the impact of predictive alerts and automated safety barriers in high-stakes environments.',
     },
@@ -268,7 +266,7 @@ export default function OutcomesIndexPage() {
                             style={{ maxWidth: 672 }}
                         >
                             <div style={{ color: '#43474F', fontSize: isMobile ? 16 : 20, fontFamily: 'Inter', fontWeight: 400, lineHeight: isMobile ? '26px' : '32.5px' }}>
-                                Standard IT metrics like uptime and latency are insufficient for the clinical reality. The Outcomes Index moves beyond technical throughput to measure patient-centered impact, operational precision, and care velocity.
+                                ETOH's Outcomes Index is a published framework for evaluating hospital operating systems against criteria that reflect actual clinical and patient value: patient outcomes, care quality, access reach, and clinical error reduction. We apply it to every ETOH deployment and publish the results, including those that challenge our assumptions. The framework is available to any clinical researcher, health policy practitioner, or hospital leadership team that wants to use it independently.
                             </div>
                         </motion.div>
 
@@ -486,7 +484,7 @@ export default function OutcomesIndexPage() {
                                     style={{ width: 48, height: 48, background: 'rgba(0, 105, 112, 0.05)', borderRadius: 12, display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}
                                 >
                                     <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 0L0 3V9C0 14.55 3.41 19.74 8 21C12.59 19.74 16 14.55 16 9V3L8 0ZM8 10H14C13.47 13.11 11.1 15.79 8 16.93V10H2V4.3L8 2.19V10Z" fill="#006970"/>
+                                        <path d="M8 0L0 3V9C0 14.55 3.41 19.74 8 21C12.59 19.74 16 14.55 16 9V3L8 0ZM8 10H14C13.47 13.11 11.1 15.79 8 16.93V10H2V4.3L8 2.19V10Z" fill="#006970" />
                                     </svg>
                                 </motion.div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -544,17 +542,17 @@ export default function OutcomesIndexPage() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                             {[
                                 {
-                                    icon: <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM16 18H8V16H16V18ZM16 14H8V12H16V14ZM13 9V3.5L18.5 9H13Z" fill="#96F1FA"/>,
+                                    icon: <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM16 18H8V16H16V18ZM16 14H8V12H16V14ZM13 9V3.5L18.5 9H13Z" fill="#96F1FA" />,
                                     vb: '0 0 24 24',
                                     label: 'Access the Clinical Blueprint (PDF)',
                                 },
                                 {
-                                    icon: <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="#96F1FA"/>,
+                                    icon: <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="#96F1FA" />,
                                     vb: '0 0 24 24',
                                     label: 'Download Anonymous Data Sets (v2.4)',
                                 },
                                 {
-                                    icon: <path d="M16 11C17.66 11 18.99 9.66 18.99 8C18.99 6.34 17.66 5 16 5C14.34 5 13 6.34 13 8C13 9.66 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8C10.99 6.34 9.66 5 8 5C6.34 5 5 6.34 5 8C5 9.66 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" fill="#96F1FA"/>,
+                                    icon: <path d="M16 11C17.66 11 18.99 9.66 18.99 8C18.99 6.34 17.66 5 16 5C14.34 5 13 6.34 13 8C13 9.66 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8C10.99 6.34 9.66 5 8 5C6.34 5 5 6.34 5 8C5 9.66 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" fill="#96F1FA" />,
                                     vb: '0 0 24 24',
                                     label: 'Join the Researchers Consortium',
                                 },
@@ -572,7 +570,7 @@ export default function OutcomesIndexPage() {
                                     </svg>
                                     <div style={{ color: 'white', fontSize: 14, fontFamily: 'Inter', fontWeight: 400, lineHeight: '20px', flex: 1 }}>{label}</div>
                                     <svg className="row-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </motion.div>
                             ))}

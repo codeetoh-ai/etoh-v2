@@ -425,16 +425,13 @@ export default function PrivateHospitalNetworksPage() {
                         }}
                     >
                         <div style={{ animation: anim('phn-network-align-1', '1.0s', 80), overflow: 'hidden' }}>
-                            The ambition of a modern
+                            The operating backbone
                         </div>
                         <div style={{ animation: anim('phn-network-align-2', '1.0s', 180), overflow: 'hidden' }}>
-                            hospital network requires
+                            that lets a hospital network
                         </div>
                         <div style={{ animation: anim('phn-network-align-3', '1.0s', 280), overflow: 'hidden' }}>
-                            operating infrastructure
-                        </div>
-                        <div style={{ animation: anim('phn-network-align-4', '1.0s', 400), overflow: 'hidden' }}>
-                            built to match it.
+                            function as one.
                         </div>
                     </div>
 
@@ -448,8 +445,9 @@ export default function PrivateHospitalNetworksPage() {
                         lineHeight: '28px',
                         animation: anim('phn-sub-fade', '0.9s', 540),
                     }}>
-                        Scale without coordination is just complexity. ETOH gives private
-                        hospital networks the institutional backbone to run at their full capability.
+                        Private hospital networks coordinate clinical care across multiple facilities, specialties, and large patient volumes simultaneously. ETOH gives multi-facility groups real-time operational visibility across all sites, shared clinical standards, and the ability to coordinate care for patients whose needs move them between facilities. Each deployment is structured around the institution's specific operational model — its patient mix, its care model, and the points at which current infrastructure creates friction, delay, or clinical risk.
+                        <br /><br />
+                        Deployment details available to hospital leadership on request.
                     </div>
 
                     {/* Buttons */}

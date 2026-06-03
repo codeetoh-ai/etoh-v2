@@ -141,13 +141,13 @@ export default function OurMissionPage() {
                         {/* text-reveal-up: headline block */}
                         <motion.div variants={textRevealUp} initial="hidden" animate="visible" custom={1} style={{ maxWidth: 787 }}>
                             <span style={{ color: 'white', fontSize: isMobile ? 36 : isTablet ? 52 : 72, fontFamily: 'Manrope', fontWeight: 800, lineHeight: isMobile ? '42px' : isTablet ? '60px' : '82px', wordWrap: 'break-word', letterSpacing: '-0.02em' }}>
-                                The gap between clinical excellence and clinical reality has always been operational.{' '}
+                                Good medicine requires good infrastructure.{' '}
                             </span>
                             <motion.span
                                 variants={textRevealUp} initial="hidden" animate="visible" custom={2}
                                 style={{ color: '#96F1FA', fontSize: isMobile ? 36 : isTablet ? 52 : 72, fontFamily: 'Manrope', fontWeight: 800, lineHeight: isMobile ? '42px' : isTablet ? '60px' : '82px', wordWrap: 'break-word', letterSpacing: '-0.02em', display: 'inline' }}
                             >
-                                We close it.
+                                We build it.
                             </motion.span>
                         </motion.div>
                     </div>
@@ -203,13 +203,13 @@ export default function OurMissionPage() {
 
                         <div style={{ fontFamily: 'Inter', fontSize: isMobile ? 16 : 18, color: '#3D3A35', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: 24 }}>
                             <motion.p variants={fadeSlideUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1} style={{ margin: 0 }}>
-                                <span style={{ float: 'left', fontSize: isMobile ? 48 : 64, lineHeight: isMobile ? '48px' : '64px', fontWeight: 800, color: '#006970', paddingRight: 12, paddingBottom: 4, fontFamily: 'Cormorant, serif' }}>G</span>
-                                reat hospitals are built by great clinicians. But clinical excellence does not reach the patient on its own — it travels through systems, workflows, handoffs, and decisions made under pressure by people who are too often without the information they need. ETOH was built on a single, stubborn belief: that the operating infrastructure of a hospital should be as sophisticated as the medicine practiced inside it.
+                                <span style={{ float: 'left', fontSize: isMobile ? 48 : 64, lineHeight: isMobile ? '48px' : '64px', fontWeight: 800, color: '#006970', paddingRight: 12, paddingBottom: 4, fontFamily: 'Cormorant, serif' }}>H</span>
+                                ospitals run on decisions — clinical decisions made by doctors, operational decisions made by administrators, care decisions made by nurses at the bedside. The quality of each decision is determined by the quality of information available to the person making it. ETOH builds the operating layer that ensures that information exists, is complete, and reaches the right person at the right moment — so that the care delivered inside a hospital matches the capability of the clinical talent working there
                             </motion.p>
 
-                            <motion.p variants={fadeSlideUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} style={{ margin: 0 }}>
+                            {/* <motion.p variants={fadeSlideUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} style={{ margin: 0 }}>
                                 Care does not fail at the level of knowledge. It fails at the level of coordination — the test result that reaches the doctor an hour too late, the discharge summary that the follow-up clinic never receives, the ward nurse who cannot reach the on-call team quickly enough. These are not clinical failures. They are infrastructure failures. And infrastructure failures are solvable.
-                            </motion.p>
+                            </motion.p> */}
 
                             {/* accent-border-reveal: highlight block */}
                             <motion.div

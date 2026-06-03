@@ -70,7 +70,6 @@ export default function HospitalInfrastructurePage() {
                             </span>
                         </div>
 
-                        {/* Headline — scanline-reveal */}
                         <div
                             className={mounted ? 'scanline-reveal' : ''}
                             style={{
@@ -83,14 +82,11 @@ export default function HospitalInfrastructurePage() {
                             }}
                         >
                             <span style={{ color: '#001736' }}>
-                                Every patient.<br />
-                                Every decision.<br />
-                                Every moment.<br />
+                                The full complexity of a hospital,<br />
                             </span>
-                            <span style={{ color: '#006970' }}>One view.</span>
+                            <span style={{ color: '#006970' }}>made legible and manageable.</span>
                         </div>
 
-                        {/* Subtext — stack-align */}
                         <div
                             className={mounted ? 'stack-align' : ''}
                             style={{
@@ -103,9 +99,7 @@ export default function HospitalInfrastructurePage() {
                                 opacity: mounted ? undefined : 0,
                             }}
                         >
-                            ETOH&apos;s clinical terminal is the institution&apos;s operating center
-                            — the place where the full complexity of a hospital becomes
-                            legible, manageable, and responsive.
+                            ETOH's clinical terminal gives authorised users across the institution a shared, live picture of everything happening inside the facility. Bed occupancy, patient flow, care pathway progress, and diagnostic status from order to result are visible in one place, in real time. Resource allocation and care team assignments are managed from the same view. Operational alerts surface what needs attention before it becomes a problem. Discharge timelines are modelled in advance so that capacity is managed ahead of demand. Insurance claims move from submission to resolution without leaving the platform. Clinical quality metrics and treatment adherence are monitored continuously across the institution rather than reviewed in periodic audits. The terminal is built around the rhythm of clinical work — it shows the state of the hospital today and gives leadership and care teams the information they need to shape what it looks like tomorrow.
                         </div>
 
                         {/* Buttons — signal-rise staggered */}

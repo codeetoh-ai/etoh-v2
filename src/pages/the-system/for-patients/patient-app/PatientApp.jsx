@@ -227,23 +227,24 @@ export default function PatientAppPage() {
                                 margin: '0 0 24px',
                             }}>
                                 <div style={{ animation: a('pa-clarity-reveal', '0.75s', 0) }}>
-                                    Your care,{' '}
+                                    Your health,{' '}
+                                </div>
+                                <div style={{ animation: a('pa-clarity-reveal', '0.75s', 150) }}>
+                                    made{' '}
                                     <span style={{
                                         color: '#006970',
                                         display: 'inline-block',
                                         animation: a('pa-meaning-highlight', '1.2s', 850, 'ease-in-out'),
                                     }}>
-                                        made visible.
-                                    </span>
-                                </div>
-                                <div style={{ animation: a('pa-clarity-reveal', '0.75s', 150) }}>
-                                    Your health,{' '}
+                                        visible
+                                    </span>{' '}
+                                    and{' '}
                                     <span style={{
                                         color: '#006970',
                                         display: 'inline-block',
                                         animation: a('pa-meaning-highlight', '1.2s', 1000, 'ease-in-out'),
                                     }}>
-                                        made understandable.
+                                        understandable.
                                     </span>
                                 </div>
                             </h1>
@@ -257,8 +258,7 @@ export default function PatientAppPage() {
                                 margin: 0,
                                 animation: a('pa-fade-up', '0.65s', 420),
                             }}>
-                                A hospital admission involves hundreds of decisions made about the{' '}
-                                patient. ETOH ensures the patient is never outside of it.
+                                The ETOH patient app gives patients and their families a clear, continuously updated view of their care. Investigation results are explained in plain language. Prescriptions are broken down for readability, with medication reminders built into daily routine. Upcoming tests come with preparation instructions and precaution guidance.  Insurance billing, claim status, and coverage queries are handled directly in the app. For patients managing chronic conditions or recovering at home, connected vital monitoring devices feed health data into the clinical record, with role-appropriate views for the patient, their caregiver, and the clinical team. The family health tree sits at the foundation of each patient's profile — capturing hereditary conditions and multi-generational health patterns so that clinical encounters are grounded in the patient's full biological history, not only their presenting complaint.
                             </p>
                         </div>
 

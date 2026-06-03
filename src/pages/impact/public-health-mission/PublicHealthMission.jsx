@@ -12,12 +12,12 @@ export default function PublicHealthMissionPage() {
     const compact = isMobile || isTablet
     const px = isMobile ? 16 : isTablet ? 24 : 32
 
-    const hardestRef    = useRef(null)
-    const outcomesRef   = useRef(null)
+    const hardestRef = useRef(null)
+    const outcomesRef = useRef(null)
     const disciplineRef = useRef(null)
 
-    const hardestInView    = useInView(hardestRef,    { once: true, amount: 0.15 })
-    const outcomesInView   = useInView(outcomesRef,   { once: true, amount: 0.1 })
+    const hardestInView = useInView(hardestRef, { once: true, amount: 0.15 })
+    const outcomesInView = useInView(outcomesRef, { once: true, amount: 0.1 })
     const disciplineInView = useInView(disciplineRef, { once: true, amount: 0.15 })
 
     // Reduce x offsets on mobile to prevent horizontal overflow
@@ -91,7 +91,7 @@ export default function PublicHealthMissionPage() {
                             style={{ paddingTop: isMobile ? 4 : 8 }}
                         >
                             <div style={{ color: '#43474F', fontSize: isMobile ? 15 : isTablet ? 18 : 22, fontFamily: 'Inter', fontWeight: 400, lineHeight: isMobile ? '24px' : '32px' }}>
-                                Improving the best hospitals is important. Bringing operational excellence to the hospitals that serve the most people — and have always had the least — is the challenge that defines a generation of health infrastructure.
+                                Bringing operational excellence to the hospitals that serve the most people is the infrastructure challenge of this generation.
                             </div>
                         </motion.div>
                     </motion.div>
@@ -135,7 +135,7 @@ export default function PublicHealthMissionPage() {
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 16 : 24 }}>
                             <div style={{ color: '#43474F', fontSize: isMobile ? 15 : 18, fontFamily: 'Inter', fontWeight: 400, lineHeight: isMobile ? '24px' : '29.25px' }}>
-                                Healthcare systems are not transformed at their peaks. They are transformed when the standard of care delivered at their most stretched, most under-resourced, most remote facilities begins to approach the standard of care delivered at their most capable ones.
+                                Healthcare systems improve when the standard of care at their most stretched facilities begins to approach the standard at their most capable. A clinical team with full operational visibility, real-time coordination tools, and a patient management system built for complexity delivers materially better care than the same team working without those things. Every design decision in ETOH — what the platform prioritises, how it is structured for public sector deployment, how it is priced for health systems whose budgets are measured against the populations they serve — is oriented toward making that improvement possible, at scale, across the facilities where it matters most.
                             </div>
                             <div style={{ color: '#43474F', fontSize: isMobile ? 15 : 18, fontFamily: 'Inter', fontWeight: 400, lineHeight: isMobile ? '24px' : '29.25px' }}>
                                 This is the hardest problem in public health infrastructure, and it is the one that ETOH&apos;s public health mission is oriented around.
@@ -159,7 +159,7 @@ export default function PublicHealthMissionPage() {
                         />
                         <div style={{ position: 'absolute', right: 20, top: -20, opacity: 0.20 }}>
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M28 26C26.3333 26 24.9167 25.4167 23.75 24.25C22.5833 23.0833 22 21.6667 22 20C22 18.3333 22.5833 16.9167 23.75 15.75C24.9167 14.5833 26.3333 14 28 14C29.6667 14 31.0833 14.5833 32.25 15.75C33.4167 16.9167 34 18.3333 34 20C34 21.6667 33.4167 23.0833 32.25 24.25C31.0833 25.4167 29.6667 26 28 26ZM28 22C28.5667 22 29.0417 21.8083 29.425 21.425C29.8083 21.0417 30 20.5667 30 20C30 19.4333 29.8083 18.9583 29.425 18.575C29.0417 18.1917 28.5667 18 28 18C27.4333 18 26.9583 18.1917 26.575 18.575C26.1917 18.9583 26 19.4333 26 20C26 20.5667 26.1917 21.0417 26.575 21.425C26.9583 21.8083 27.4333 22 28 22ZM16 40V34.2C16 33.5 16.1667 32.8417 16.5 32.225C16.8333 31.6083 17.3 31.1167 17.9 30.75C18.9667 30.1167 20.0917 29.5917 21.275 29.175C22.4583 28.7583 23.6667 28.45 24.9 28.25L28 32L31.1 28.25C32.3333 28.45 33.5333 28.7583 34.7 29.175C35.8667 29.5917 36.9833 30.1167 38.05 30.75C38.65 31.1167 39.125 31.6083 39.475 32.225C39.825 32.8417 40 33.5 40 34.2V40H16ZM19.95 36H26.1L23.4 32.7C22.8 32.8667 22.2167 33.0833 21.65 33.35C21.0833 33.6167 20.5167 33.9 19.95 34.2V36ZM29.9 36H36V34.2C35.4667 33.8667 34.9167 33.575 34.35 33.325C33.7833 33.075 33.2 32.8667 32.6 32.7L29.9 36ZM4 36C2.9 36 1.95833 35.6083 1.175 34.825C0.391667 34.0417 0 33.1 0 32V4C0 2.9 0.391667 1.95833 1.175 1.175C1.95833 0.391667 2.9 0 4 0H32C33.1 0 34.0417 0.391667 34.825 1.175C35.6083 1.95833 36 2.9 36 4V14C35.4667 13.3333 34.8833 12.7 34.25 12.1C33.6167 11.5 32.8667 11.1 32 10.9V4H4V32H12.3C12.2 32.3667 12.125 32.7333 12.075 33.1C12.025 33.4667 12 33.8333 12 34.2V36H4ZM8 12H22C22.8667 11.3333 23.8167 10.8333 24.85 10.5C25.8833 10.1667 26.9333 10 28 10V8H8V12ZM8 20H18C18 19.3 18.075 18.6167 18.225 17.95C18.375 17.2833 18.5833 16.6333 18.85 16H8V20ZM8 28H14.9C15.2667 27.7 15.6583 27.4333 16.075 27.2C16.4917 26.9667 16.9167 26.75 17.35 26.55V24H8V28ZM4 32V4V10.85C4 10.5833 4 10.375 4 10.225C4 10.075 4 10 4 10C4 10 4 10.975 4 12.925C4 14.875 4 17.2333 4 20C4 20.9333 4 21.8667 4 22.8C4 23.7333 4 24.6667 4 25.6C4 25.8667 4 26.15 4 26.45C4 26.75 4 27.0333 4 27.3C4 28.0667 4 28.85 4 29.65C4 30.45 4 31.2333 4 32Z" fill="#006970"/>
+                                <path d="M28 26C26.3333 26 24.9167 25.4167 23.75 24.25C22.5833 23.0833 22 21.6667 22 20C22 18.3333 22.5833 16.9167 23.75 15.75C24.9167 14.5833 26.3333 14 28 14C29.6667 14 31.0833 14.5833 32.25 15.75C33.4167 16.9167 34 18.3333 34 20C34 21.6667 33.4167 23.0833 32.25 24.25C31.0833 25.4167 29.6667 26 28 26ZM28 22C28.5667 22 29.0417 21.8083 29.425 21.425C29.8083 21.0417 30 20.5667 30 20C30 19.4333 29.8083 18.9583 29.425 18.575C29.0417 18.1917 28.5667 18 28 18C27.4333 18 26.9583 18.1917 26.575 18.575C26.1917 18.9583 26 19.4333 26 20C26 20.5667 26.1917 21.0417 26.575 21.425C26.9583 21.8083 27.4333 22 28 22ZM16 40V34.2C16 33.5 16.1667 32.8417 16.5 32.225C16.8333 31.6083 17.3 31.1167 17.9 30.75C18.9667 30.1167 20.0917 29.5917 21.275 29.175C22.4583 28.7583 23.6667 28.45 24.9 28.25L28 32L31.1 28.25C32.3333 28.45 33.5333 28.7583 34.7 29.175C35.8667 29.5917 36.9833 30.1167 38.05 30.75C38.65 31.1167 39.125 31.6083 39.475 32.225C39.825 32.8417 40 33.5 40 34.2V40H16ZM19.95 36H26.1L23.4 32.7C22.8 32.8667 22.2167 33.0833 21.65 33.35C21.0833 33.6167 20.5167 33.9 19.95 34.2V36ZM29.9 36H36V34.2C35.4667 33.8667 34.9167 33.575 34.35 33.325C33.7833 33.075 33.2 32.8667 32.6 32.7L29.9 36ZM4 36C2.9 36 1.95833 35.6083 1.175 34.825C0.391667 34.0417 0 33.1 0 32V4C0 2.9 0.391667 1.95833 1.175 1.175C1.95833 0.391667 2.9 0 4 0H32C33.1 0 34.0417 0.391667 34.825 1.175C35.6083 1.95833 36 2.9 36 4V14C35.4667 13.3333 34.8833 12.7 34.25 12.1C33.6167 11.5 32.8667 11.1 32 10.9V4H4V32H12.3C12.2 32.3667 12.125 32.7333 12.075 33.1C12.025 33.4667 12 33.8333 12 34.2V36H4ZM8 12H22C22.8667 11.3333 23.8167 10.8333 24.85 10.5C25.8833 10.1667 26.9333 10 28 10V8H8V12ZM8 20H18C18 19.3 18.075 18.6167 18.225 17.95C18.375 17.2833 18.5833 16.6333 18.85 16H8V20ZM8 28H14.9C15.2667 27.7 15.6583 27.4333 16.075 27.2C16.4917 26.9667 16.9167 26.75 17.35 26.55V24H8V28ZM4 32V4V10.85C4 10.5833 4 10.375 4 10.225C4 10.075 4 10 4 10C4 10 4 10.975 4 12.925C4 14.875 4 17.2333 4 20C4 20.9333 4 21.8667 4 22.8C4 23.7333 4 24.6667 4 25.6C4 25.8667 4 26.15 4 26.45C4 26.75 4 27.0333 4 27.3C4 28.0667 4 28.85 4 29.65C4 30.45 4 31.2333 4 32Z" fill="#006970" />
                             </svg>
                         </div>
                         <div style={{ color: '#001736', fontSize: isMobile ? 17 : 24, fontFamily: 'Manrope', fontWeight: 700, lineHeight: isMobile ? '26px' : '34px', position: 'relative' }}>
@@ -292,12 +292,12 @@ export default function PublicHealthMissionPage() {
                         <div style={{ display: 'flex', gap: 12 }}>
                             {[
                                 {
-                                    icon: <svg width="22" height="16" viewBox="0 0 24 24" fill="none"><path d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 13.94 7.75 14 9H16.21C16.14 7.28 15.09 5.7 13 5.19V3H10V5.16C8.06 5.58 6.5 6.84 6.5 8.77C6.5 11.08 8.41 12.23 11.2 12.9C13.7 13.5 14.2 14.38 14.2 15.31C14.2 16 13.71 17.1 11.5 17.1C9.44 17.1 8.63 16.18 8.52 15H6.32C6.44 17.19 8.08 18.42 10 18.83V21H13V18.85C14.95 18.48 16.5 17.35 16.5 15.3C16.5 12.46 14.07 11.49 11.8 10.9Z" fill="#96F1FA"/></svg>,
+                                    icon: <svg width="22" height="16" viewBox="0 0 24 24" fill="none"><path d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 13.94 7.75 14 9H16.21C16.14 7.28 15.09 5.7 13 5.19V3H10V5.16C8.06 5.58 6.5 6.84 6.5 8.77C6.5 11.08 8.41 12.23 11.2 12.9C13.7 13.5 14.2 14.38 14.2 15.31C14.2 16 13.71 17.1 11.5 17.1C9.44 17.1 8.63 16.18 8.52 15H6.32C6.44 17.19 8.08 18.42 10 18.83V21H13V18.85C14.95 18.48 16.5 17.35 16.5 15.3C16.5 12.46 14.07 11.49 11.8 10.9Z" fill="#96F1FA" /></svg>,
                                     label: 'Public Sector Pricing',
                                     delay: 0.35,
                                 },
                                 {
-                                    icon: <svg width="22" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 15.11 16.1 17.78 12 18.93V12H5V6.3L12 3.19V11.99Z" fill="#96F1FA"/></svg>,
+                                    icon: <svg width="22" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 15.11 16.1 17.78 12 18.93V12H5V6.3L12 3.19V11.99Z" fill="#96F1FA" /></svg>,
                                     label: 'Long-term Ethics',
                                     delay: 0.47,
                                 },

@@ -203,8 +203,7 @@ export default function EndtoEndCarePage() {
                                 fontWeight: 400,
                                 lineHeight: '32px',
                             }}>
-                            ETOH is built around a simple architectural conviction: the
-                            episode of care is one thing, not many.
+                            ETOH covers every stage of the care episode — pre-admission, admission, inpatient care, diagnostics, treatment, discharge, recovery, and follow-up. The clinical record does not need to be reconstructed at each handoff. The patient does not carry information between departments. The transition home is managed within the same platform that managed the admission. ETOH runs the full episode, from the moment care is sought to the moment it is no longer needed.
                         </motion.div>
 
                         {/* Button — button-rise */}

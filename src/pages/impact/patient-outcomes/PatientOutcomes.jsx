@@ -34,11 +34,11 @@ function useCounter(target, active, duration = 1100, decimals = 0) {
 }
 
 const heroLines = [
-    'What has actually',
-    'changed. In the facilities',
-    'we operate in, and the',
-    'lives of the patients they',
-    'serve.',
+    'The true measure of',
+    'clinical architecture',
+    'is the delta between',
+    'traditional care and',
+    'precision operations.',
 ]
 
 const bars = [
@@ -162,7 +162,7 @@ export default function PatientOutcomesPage() {
                             />
                         )}
                         <div style={{ color: '#43474F', fontSize: 18, fontFamily: 'Inter', fontWeight: 400, lineHeight: '29.25px' }}>
-                            The true measure of clinical architecture is found in the delta between traditional care and precision operations.
+                            If the patient's care did not improve, nothing we built mattered.
                         </div>
                     </motion.div>
                 </div>
@@ -210,10 +210,10 @@ export default function PatientOutcomesPage() {
                         style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24, paddingTop: compact ? 0 : 48 }}
                     >
                         <div style={{ color: '#43474F', fontSize: 18, fontFamily: 'Inter', fontWeight: 300, lineHeight: '29.25px' }}>
-                            ETOH tracks clinical outcomes across every deployed facility: diagnostic cycle times, care pathway adherence, medication safety incidents, avoidable readmission rates, length-of-stay efficiency, and patient-reported experience from admission through post-discharge recovery.
+                            Across the ETOH network, we track the metrics that define recovery and safety. Facilities running on our operating system report sustained improvements in avoidable readmission rates, shorter length-of-stay averages for complex cases, and near-zero adverse medication events due to automated cross-checking.
                         </div>
                         <div style={{ color: '#43474F', fontSize: 18, fontFamily: 'Inter', fontWeight: 300, lineHeight: '29.25px' }}>
-                            These numbers are published not because they are uniformly favorable but because they are honest — and because the discipline of tracking them, and being willing to publish them, is part of what it means to operate a clinical platform responsibly.
+                            These outcomes are the result of giving clinical teams real-time visibility and decision support precisely when they need it. We publish these numbers because the discipline of tracking them is what makes ETOH a clinical platform, not just an IT vendor.
                         </div>
                     </motion.div>
                 </div>

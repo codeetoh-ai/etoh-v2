@@ -61,8 +61,8 @@ export const menuData = [
         title: "News & Insights",
         slug: "news-insights",
         children: [
-            { title: "News", slug: "news" },
-            { title: "Insights", slug: "insights" },
+            { title: "News & Insights", slug: "news" },
+            // { title: "Insights", slug: "insights" },
         ],
     },
 ]
