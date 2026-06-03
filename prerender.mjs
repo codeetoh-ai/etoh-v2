@@ -14,11 +14,11 @@ import { fileURLToPath } from 'url'
 import puppeteerCore from 'puppeteer-core'
 import puppeteer from 'puppeteer'
 
-let chromiumModule
-try {
-    chromiumModule = await import('@sparticuz/chromium')
-} catch {
-    chromiumModule = null
+let chromiumModule = null;
+if (process.platform !== 'win32') {
+    try {
+        chromiumModule = await import('@sparticuz/chromium');
+    } catch {}
 }
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
@@ -129,6 +129,7 @@ async function prerender() {
     } else {
         browser = await puppeteer.launch({
             headless: true,
+            executablePath: process.env.CHROME_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
         })
     }
